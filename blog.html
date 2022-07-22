@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WsF's blog</title>
+    <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
+    <style>
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        a, p {
+            display: inline; 
+        }
+
+        body {
+            margin: 0px;
+            background-color: #e7e0c6;
+        }
+    
+        input {
+            width: 100px;
+        }
+    
+        jmplnk {
+            top: -75px;
+            position: relative;
+
+        }
+
+        pre {
+            user-select: text;
+            margin-left: 10px;
+            width: 800px;
+            border-radius: 5px;
+            background-color: #111111;
+            color: #ededed;
+            font-size: large;
+            font-family: consolas;
+        }
+        
+        window {
+            background-color: #666666;
+            font-size: x-small;
+            position: absolute;
+            height: 20px;
+            width: 800px;
+            border-radius: 5px 5px 0px 0px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+
+        .blogs {
+            width: 850px;
+            border-radius: 3px;
+            background-color: #faf9de;
+            box-shadow: 0 0 3px 3px #faf9de; 
+        }
+
+        .linker {
+            margin-left: 10px;
+            background-color: whitesmoke;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: large;
+            color: black;
+        }
+    
+        #blog {
+            margin-top: 80px;
+            margin-left: 30px;
+            width: 850px;
+        }
+    
+        #header {
+            z-index: 100;
+            margin: 0px;
+            border: 0px;
+            position: fixed;
+            top: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 55px;
+            background-color: #66ccff;
+            align-items: center;
+            box-shadow: 0 0 3px 3px #6cf; 
+        }
+    
+        #title {
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            text-align: left;
+        }
+    
+        #links { 
+            margin-right: 10px;
+            float: right;
+            margin-top: 15px;
+            text-align: right;
+            width: 200px;
+        }
+
+        #tojump {
+            position: absolute;
+            right: 5px;
+            margin-top: 60px;
+        }
+
+        #footer {
+            text-align: center;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h2 id="title">WsF的博客（日志）</h2>
+        <div id="links">
+            <a class="linker" href="./index.html">🏰主站 </a>
+            <a class="linker" href="./blog.html">📕博客(日志) </a>
+        </div>
+        <div id="tojump">
+            <label for="jumper" id="label">跳转至：</label>
+            <input type="date" name="jumper" id="jumper" min="2022-06-18" value="2022-06-18">
+            <button type="button" onclick="find()">跳转</button>
+        </div>
+    </div>
+    <div id="blog">
+        <!-- 
+        <div class="blogs">
+            <jmplnk id=""></jmplnk>
+            <h2></h2>
+            <p></p>
+        </div> -->
+
+        <div class="blogs">
+            <jmplnk id="2022-06-24"></jmplnk>
+            <h2>2022/6/24</h2>
+            <p>看起来我的网站用了https导致不能直接用BeEF进行XSS攻击啊。。</p><br>
+            <p>看来https还挺安全的（</p>
+            <p>msdt-follina的PoC为什么我不会用呢。。</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-23"></jmplnk>
+            <h2>2022/6/23</h2>
+            <p>新电脑到了！配置够高，装上了VMWare :)</p><br>
+            <p>于是装了Kali、Ubuntu虚拟机~</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-24"></jmplnk>
+            <h2>2022/6/24</h2>
+            <p>第二次在B站投稿了！</p><br>
+            <a href="https://www.bilibili.com/video/BV1UT411g7FV/">🔗本想用偏置类横转三刀流，但我对三刀流一无所知</a> 
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-22"></jmplnk>
+            <h2>2022/6/22</h2>
+            <p>期末考逝的最后一天~~</p><br>
+            <p>[11:36] 英语难度感觉挺低（出意外的话，应该不会出意外了）</p><br>
+            <p>[14:42] 物理？（反正估不出分）（会意外地不意外吗）</p><br>
+            <p>[16:46] 历史结束了！已经结束了！！！</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-21"></jmplnk>
+            <h2>2022/6/21</h2>
+            <p>期末考逝的第一天~</p><br>
+            <p>[11:50] 语文难度似乎挺正常的（不会估分的屑）（没考岳阳楼记？我不理解）</p><br>
+            <p>[15:09] 数学结束了！看起来不难，不出意外应该挺好（不出意外，会出意外）</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-20"></jmplnk>
+            <h2>2022/6/20</h2>
+            <p>背书之余，给博客、主站加了一点效果：模糊边缘、macOS窗口式代码栏：</p>
+            <pre><window> 🔴 🟠 🟢 </window>
+模糊边框：
+CSS：
+    box-shadow: 0px, 0px, 3px, 3px, #6cf;
+    /* x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+
+标题栏：
+HTML：
+    &lt;pre&gt;&lt;window&gt; 🔴 🟠 🟢 &lt;/window&gt;
+    此处写代码内容&lt;/pre&gt;
+CSS：（最后编辑于2022/6/22）
+    pre {
+        user-select: text;
+        margin-left: 10px;
+        width: 800px;
+        border-radius: 5px;
+        background-color: #111111;
+        color: #ededed;
+        font-size: large;
+        font-family: consolas;
+    }
+    window {
+        background-color: #666666;
+        font-size: x-small;
+        position: absolute;
+        height: 20px;
+        width: 800px;
+        border-radius: 5px 5px 0px 0px;
+        line-height: 20px;
+        overflow: hidden;
+    }</pre>
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow">🔗box-shadow的MDN Reference</a>
+            <br><p>另外，<b>display: fixed;</b> 会使得元素固定在页面的某个位置，如 #header；<br>
+            <b>z-index: </b>加数字表示元素显示优先级。</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-19"></jmplnk>
+            <h2>2022/6/19</h2>
+            <p>背书之余（不背书就wán喽），对博客、主站进行了完善。</p>
+        </div>
+        <div class="blogs">
+            <jmplnk id="2022-06-18"></jmplnk>
+            <h2>2022/6/18</h2>
+            <p>对Undertale fight.html进行修改：在 攻击 循环处可以尝试使用一下代码来实现连续定时移动。
+                <pre><window> 🔴 🟠 🟢 </window>
+function atk(depth){
+    setTimeout(() => {
+        bone1.style.marginLeft=bone1.offsetLeft+"px";
+        if(depth &lt; 50) atk(depth+1);
+    }, 800);
+}</pre></p>
+        </div>
+        <div id="footer"><p>--------------------------------------------- The end ---------------------------------------------</p></div>
+        <br>
+    </div>
+
+
+    <script>
+        function find() {
+            var inp = document.getElementById("jumper").value;
+            var input = inp.toString();
+            window.location="#"+input;
+        }
+    </script>
+</body>
+</html>

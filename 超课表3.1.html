@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+        <title>超课表 Hyper Schedule</title>
+        <link rel="shortcut icon" href="./pictures/HyperSchedule-ico.png">
+        <style>
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+            body {
+                background-color: #eeeeee;
+                -webkit-user-select: none;
+                -moz-user-seletct: none;
+                user-select: none;
+            }
+            button {
+                background-color: #eeeeee;
+                border-radius: 5px;
+                border: 3px solid gray;
+                margin-left: 2.2%;
+                margin-top: 5px;
+                font-size: medium;
+            }
+            p {
+                font-size: small;
+                margin: 0 auto;
+                margin-top: 20px;
+                cursor: none;
+                width: -moz-fit-content;
+                width: fit-content;
+                text-align: center;
+            }
+            table {
+                background-color: white;
+                border: 2px solid black;
+                border-spacing: 0px;
+                text-align: center;
+                margin: 0 auto;
+            }
+            td {
+                border: 1px solid black;
+                text-align: center;
+                margin: 0 auto;
+                height: 33px;
+            }
+            th {
+                border: 1px solid grey;
+                height: 40px;
+                font-size: larger;
+            }
+            .class {
+                width: 200px;
+            }
+            .time {
+                writing-mode: vertical-lr;
+                width: 30px;
+            }
+            .help {
+                border-radius: 100%;
+                background-color: white;
+                border: 2px solid rgb(64, 64, 64);
+            }
+            .helpWindow {
+                border: 2px solid black;
+                border-radius: 10px;
+                background-color: white;
+                border-spacing: 0px;
+                text-align: center;
+                margin: -160px 0 0 -45%;
+                position: absolute;
+                display: none;
+                top: 50%;
+                left: 50%;
+                width: 90%;
+                height: 320px;
+            }
+            .mask {
+                background-color: #666666;
+                opacity: 0.5;
+                position: absolute;
+                display: none;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+            }
+            #back {
+                font-size: medium;
+                margin-left: 20px;
+                background-color: #3333FF;
+                color: white;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <!-- 课表 start-->
+            <table id="schedule" title="《初二年级6.13-6.17日课程安排（第18周复习周安排）》版课表">
+                <thead>
+                    <th colspan="8">初二年级6.13-6.17日课程安排（第18周复习周安排）</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td title="（空）"></td>
+                        <td title="节次">节次</td>
+                        <td title="时间">时间</td>
+                        <td class="class  Mon" title="周一">周一</td>
+                        <td class="class  Tue" title="周二">周二</td>
+                        <td class="class  Wed" title="周三">周三</td>
+                        <td class="class  Thu" title="周四">周四</td>
+                        <td class="class  Fri" title="周五">周五</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6" class="time" title="上 午">上&nbsp;&nbsp;午</td>
+                        <td title="早自习"></td>
+                        <td title="时间">7:30-8:00</td>
+                        <td title="英语早自习" class="Mon"><a href="javascript:open(eng_mor)">英语早自习</a></td>
+                        <td title="语文早自习" class="Tue"><a href="javascript:open(chinese)">语文早自习</a></td>
+                        <td title="英语早自习" class="Wed"><a href="javascript:open(eng_mor)">英语早自习</a></td>
+                        <td title="语文早自习" class="Thu"><a href="javascript:open(chinese)">语文早自习</a></td>
+                        <td title="历史早自习" class="Fri"><a href="javascript:open(histor)">历史早自习</a></td>
+                    </tr>
+                    <tr>
+                        <td title="上午第一节">1</td>
+                        <td title="时间">8:00-8:40</td>
+                        <td title="英语" class="Mon"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                        <td title="语文" class="Tue"><a href="javascript:open(chinese)">语文直播</a></td>
+                        <td title="物理" class="Wed"><a href="javascript:open(physics)">物理直播</a></td>
+                        <td title="语文" class="Thu"><a href="javascript:open(chinese)">语文直播</a></td>
+                        <td title="数学" class="Fri"><a href="javascript:open(maths)">数学直播</a></td>
+                    </tr>
+                    <tr>
+                        <td title="上午第二节">2</td>
+                        <td title="时间">8:50-9:30</td>
+                        <td title="语文" class="Mon"><a href="javascript:open(chinese)">语文直播</a></td>
+                        <td title="英语" class="Tue"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                        <td title="数学" class="Wed"><a href="javascript:open(maths)">数学直播</a></td>
+                        <td title="数学" class="Thu"><a href="javascript:open(maths)">数学直播</a></td>
+                        <td title="语文" class="Fri"><a href="javascript:open(chinese)">语文直播</a></td>
+                    </tr>
+                    <tr>
+                        <td title="上午第三节">3</td>
+                        <td title="时间">9:40-10:20</td>
+                        <td title="数学" class="Mon"><a href="javascript:open(maths)">数学直播</a></td>
+                        <td title="数学" class="Tue"><a href="javascript:open(maths)">数学直播</a></td>
+                        <td title="数学" class="Wed"><a href="javascript:open(maths)">数学直播</a></td>
+                        <td title="英语" class="Thu"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                        <td title="英语" class="Fri"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                    </tr>
+                    <tr>
+                        <td title="上午第四节">4</td>
+                        <td title="时间">10:35-11:15</td>
+                        <td title="体育" class="Mon"><a href="javascript:open(pe)">体育与健身（直播）</a></td>
+                        <td title="音乐" class="Tue"><a href="javascript:open(music)">音乐直播</a></td>
+                        <td title="语文" class="Wed"><a href="javascript:open(chinese)">语文直播</a></td>
+                        <td title="英语" class="Thu"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                        <td title="生命" class="Fri"><a href="javascript:open(lifesci)">生命科学直播</a></td>
+                    </tr>
+                    <tr>
+                        <td title="上午第五节">5</td>
+                        <td title="时间">11:25-12:00</td>
+                        <td title="物理" class="Mon"><a href="javascript:open(physics)">物理直播</a></td>
+                        <td title="自习" class="Tue"><a href="javascript:open(zixi)">自主复习</a></td>
+                        <td title="体育" class="Wed"><a href="javascript:open(pe)">体育与健身（直播）</a></td>
+                        <td title="英语" class="Thu"><a href="javascript:open(zixi)">自主复习</a></td>
+                        <td title="自习" class="Fri"><a href="javascript:open(zixi)">自主复习</a></td>
+                    </tr>
+                    <td colspan="8" style="height: 50px;" title="午 休">午休</td>
+                    <tr>
+                        <td rowspan="4" class="time" title="下 午">下&nbsp;&nbsp;午</td>
+                        <td title="下午第一节">1</td>
+                        <td title="时间">13:30-14:10</td>
+                        <td title="历史" class="Mon"><a href="javascript:open(histor)">历史直播</a></td>
+                        <td title="道法" class="Tue"><a href="javascript:open(law)">道德与法治直播</a></td>
+                        <td title="英语" class="Wed"><a href="javascript:open(eng_cla)">英语直播</a></td>
+                        <td title="体育" class="Thu"><a href="javascript:open(pe)">体育与健身（直播）</a></td>
+                        <td title="历史" class="Fri"><a href="javascript:open(histor)">历史直播</a></td>
+                    </tr>
+                    <tr>
+                        <td title="下午第二节">2</td>
+                        <td title="时间">14:20-15:00</td>
+                        <td title="美术" class="Mon"><a href="javascript:open(art)">美术直播</a></td>
+                        <td title="物理" class="Tue"><a href="javascript:open(physics)">物理直播</a></td>
+                        <td title="历史" class="Wed"><a href="javascript:open(histor)">历史直播</a></td>
+                        <td title="自习" class="Thu"><a href="javascript:open(zixi)">自主复习</a></td>
+                        <td title="道法" class="Fri"><a href="javascript:open(law)">道法</a></td>
+                    </tr>
+                    <tr>
+                        <td title="下午第三节">3</td>
+                        <td title="时间">15:15-15:55</td>
+                        <td title="生命" class="Mon"><a href="javascript:open(lifesci)">
+                                生命科学直播</a></td>
+                        <td title="物理" class="Tue"><a href="javascript:open(physics)">物理直播</a></td>
+                        <td title="语文" class="Wed"><a href="javascript:open(chinese)">语文直播</a></td>
+                        <td title="14岁生日仪式" rowspan="2" class="Thu" style="font-size: larger;"><a href="https://wx.vzan.com/live/page/0660ED8FA2C4448E601EBFF1087596A4?topicid=758435296&shauid=undefined&vprid=0&sharetstamp=1655246803745">14岁生日仪式🧡</a></td>
+                        <td title="班会" class="Fri"><a href="javascript:open(classme)">班会</a></td>
+                    </tr>
+                    <tr>
+                        <td title="下午第四节">4</td>
+                        <td title="时间">16:05-16:45</td>
+                        <td title="自习" class="Mon"><a href="javascript:open(zixi)">自主复习</a></td>
+                        <td title="自习" class="Tue"><a href="javascript:open(zixi)">自主复习</a></td>
+                        <td title="自习" class="Wed"><a href="javascript:open(zixi)">自主复习</a></td>
+                        
+                        <td title="（空）"></td>
+                    </tr>
+                    <tr>
+                        <td class="time" title="晚">晚</td>
+                        <td title="晚自习"></td>
+                        <td title="时间">18:30-20:45</td>
+                        <td colspan="4" title="晚自习"><a style="color: blue" href="javascript:open(evening)">6/15晚自习</a></td>
+                        <td title="（空）"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 课表 end -->
+            <button type="button" id="autoSwitcher" onclick="autoSwitch()" title="关闭自动入会">关闭自动入会</button>
+            <button type="button" id="autoSwitcherzixi" onclick="autoSwitchzixi()" title="自习会议特别开关">关闭自动进入自习会议</button>
+            <button type="button" id="autoSwitcherPE" onclick="autoSwitchPE()" title="体育特别开关">关闭自动进入体育会议</button>
+            <button type="button" onclick="test()" title="测试弹出窗口">测试弹出窗口</button>
+            <button type="button" id="help" class="help" onclick="help()" title="帮助">?</button>
+            <button type="button" id="back" title="返回" onclick="javascript:window.location='./index.html'">返回首页</button>
+        </div>
+
+        <p title="告示">6/12 [15:29]课表已调整；6/13 [8:18]数学会议号已更新；[9:38]调课已更新；[17:55]加入晚自习的入会</p>
+        <p title="notes">2022/6/7 &nbsp;&nbsp;&nbsp; version server-3.2常维护版本 &nbsp;&nbsp;&nbsp; made by C19746 &nbsp;&nbsp;&nbsp; 仅提供一九级七班课程链接 &nbsp;&nbsp;&nbsp;
+            建议使用Microsoft Edge浏览器打开</p>
+        <div id="mask" class="mask" onclick="closeHelp()"></div>
+        <div id="helpWindow" class="helpWindow" onclick="closeHelp()">
+            <h4>入会方式：单击任意课程即可进入对应会议室；课前5分钟会自动进入会议室（可关闭）；</h4>
+            <h4 style="display: inline;">请允许 弹出窗口与重定向、在本站点打开链接 ，否则会无法进入会议室。</h4>
+            <h4>自动进入教室是通过每分钟检查一次当前的时间实现的，故需禁止此页面进入睡眠模式，否则会无法自动入会；</h4>
+            <h4>自习/体育的特别开关 规则：当且仅当 自动进入会议、自动进入自习/体育 同时打开时，才可自动入会。</h4>
+            <h4>语文/英语的竞赛班/提高班、导师活动教室不统一，暂不支持超链接/自动入会。</h4>
+            <h4>另外，若有调课、调休情况，建议关闭自动入会。</h4>
+            <h5>入会时间：早自习-提前10分钟；下午第一节课-提前15分钟；晚自习：提前30分钟；其它所有课-提前5分钟；连续课程不重复入会。</h5>
+        </div>
+
+        <script>
+            var autoJoin = true;
+            var zixike = true, PE = true;
+
+            var chinese = "wemeet://page/inmeeting?meeting_code=115875319&token=&launch_id=bcsGnTwairjn4p8z&meeting_type_flags=0&rs=30";
+            var maths   = "wemeet://page/inmeeting?meeting_code=917435673&token=&launch_id=H362Pd4ChTmw86zM&meeting_type_flags=0&rs=30";
+            var eng_mor = "wemeet://page/inmeeting?meeting_code=932731681&token=&launch_id=aNhCaCw6Y7HQRY5Q&meeting_type_flags=0&rs=58";
+            var eng_cla = "wemeet://page/inmeeting?meeting_code=8389922052&launch_id=Jx7bFa6yHnZCXTcB&is_pmi=1";
+            var physics = "wemeet://page/inmeeting?meeting_code=6445313230&launch_id=SPPPtCwJm7Mc4sss&is_pmi=1";
+            var mathcom = "wemeet://page/inmeeting?meeting_code=342141070&token=&launch_id=HKs3nhbnHT67hxdH&meeting_type_flags=0&rs=58";
+            var zixi    = "wemeet://page/inmeeting?meeting_code=66697453529&token=&launch_id=HYWc6Y5DY5efXFei&meeting_type_flags=0&rs=58";
+            var classme = "wemeet://page/inmeeting?meeting_code=962504608&token=&launch_id=tAZF3erzTE2caEHT&meeting_type_flags=0&rs=58";
+            var pe      = "wemeet://page/inmeeting?meeting_code=55177691082&token=&launch_id=5t7KAieRrkX4sJyF&meeting_type_flags=0&rs=58";
+            var histor  = "wemeet://page/inmeeting?meeting_code=6836138146&launch_id=txGCzn2iGDN2rFB3&is_pmi=1";
+            var law     = "wemeet://page/inmeeting?meeting_code=78133796188&token=&launch_id=DpF8mPrZWkT6N6YY&meeting_type_flags=0&rs=58";
+            var music   = "wemeet://page/inmeeting?meeting_code=655605368&token=&launch_id=eJMEsZQ7QQDXxPTh&meeting_type_flags=0&rs=58";
+            var art     = "wemeet://page/inmeeting?meeting_code=3966217609&launch_id=JB8PmseAAaBGNiKw&is_pmi=1";
+            var lifesci = "wemeet://page/inmeeting?meeting_code=61897168550&token=&launch_id=GSiabNCCTJR23n5M&meeting_type_flags=0&rs=58";
+            var evening = "wemeet://page/inmeeting?meeting_code=989712386&token=&launch_id=YmbbCTwZBQtskR6J&meeting_type_flags=0&rs=58";
+
+            window.onload = function checkDay() {
+                alert("此项目将从2022/6/21起停止维护（网课结束，无需课表）。")
+
+                day = new Date().getDay();
+                if (day == '1') var change = 'Mon';
+                else if (day == '2') var change = 'Tue';
+                else if (day == '3') var change = 'Wed';
+                else if (day == '4') var change = 'Thu';
+                else if (day == '5') var change = 'Fri';
+                var oUl = document.getElementById('schedule');
+                var aLi = oUl.getElementsByTagName('td');
+                for (var i = 0; i < aLi.length; i++) {
+                    if (aLi[i].className == change || aLi[i].className == 'class  ' + change) {
+                        aLi[i].style.background = 'rgb(102 204 255 / 50%)';
+                        aLi[i].style.fontSize = 'large';
+                    }
+                }
+                check();
+            }
+            var hour = new Date().getHours();
+            var minute = new Date().getMinutes();
+            function autoSwitch() {
+                autoJoin = !autoJoin;
+                if (autoJoin) {
+                    document.getElementById("autoSwitcher").innerText = "关闭自动入会";
+                    document.getElementById("autoSwitcher").title = "关闭自动入会";
+                } else {
+                    document.getElementById("autoSwitcher").innerText = "打开自动入会";
+                    document.getElementById("autoSwitcher").title = "打开自动入会";
+                }
+            }
+            function autoSwitchzixi() {
+                zixike = !zixike;
+                if (zixike) document.getElementById("autoSwitcherzixi").innerText = "关闭自动进入自习会议";
+                else document.getElementById("autoSwitcherzixi").innerText = "打开自动进入自习会议";
+            }
+            function autoSwitchPE() {
+                PE = !PE;
+                if (PE) document.getElementById("autoSwitcherPE").innerText = "关闭自动进入体育会议";
+                else document.getElementById("autoSwitcherPE").innerText = "打开自动进入体育会议";
+            }
+            function help() {
+                document.getElementById("helpWindow").style.display = "block";
+                document.getElementById("mask").style.display = "block";
+            }
+            function closeHelp() {
+                document.getElementById("helpWindow").style.display = "none";
+                document.getElementById("mask").style.display = "none";
+            }
+            function test() {
+                open("wemeet://");
+            }
+            function check() {
+                hour = new Date().getHours();
+                minute = new Date().getMinutes();
+                if (autoJoin == false) {
+                    ;
+                } else if (day == "1") {
+                    if (hour == "7" && minute == "20") open(eng_mor);
+                    else if (hour == "7" && minute == "55") open(eng_cla);
+                    else if (hour == "8" && minute == "45") open(chinese);
+                    else if (hour == "9" && minute == "35") open(maths);
+                    else if (hour == "10" && minute == "30" && PE) open(pe);
+                    else if (hour == "11" && minute == "20") open(physics);
+                    else if (hour == "13" && minute == "15") open(histor);
+                    else if (hour == "14" && minute == "15") open(art);
+                    else if (hour == "15" && minute == "10") open(lifesci);
+                    else if (hour == "16" && minute == "00" && zixike) open(zixi);
+                } else if (day == "2") {
+                    if (hour == "7" && minute == "20") open(chinese);
+                    //连续语文，不用重复入会
+                    else if (hour == "8" && minute == "45") open(eng_cla);
+                    else if (hour == "9" && minute == "35") open(maths);
+                    else if (hour == "10" && minute == "30") open(music);
+                    else if (hour == "11" && minute == "20" && zixike) open(zixi);
+                    else if (hour == "13" && minute == "15") open(law);
+                    else if (hour == "14" && minute == "15") open(physics);
+                    //连续物理，不用重复入会
+                    else if (hour == "16" && minute == "00" && zixike) open(zixi);
+                } else if (day == "3") {
+                    if (hour == "7" && minute == "20") open(eng_mor);
+                    else if (hour == "7" && minute == "55") open(physics);
+                    else if (hour == "8" && minute == "45") open(maths);
+                    //连续数学课，不用重复入会
+                    else if (hour == "10" && minute == "30") open(chinese);
+                    else if (hour == "11" && minute == "20" && PE) open(pe);
+                    else if (hour == "13" && minute == "15") open(eng_cla);
+                    else if (hour == "14" && minute == "15") open(histor);
+                    else if (hour == "15" && minute == "10") open(chinese);
+                    else if (hour == "16" && minute == "00" && zixike) open(zixi);
+                } else if (day == "4") {
+                    if (hour == "7" && minute == "20") open(chinese);
+                    //连续语文，不用重复入会
+                    else if (hour == "8" && minute == "45") open(maths);
+                    else if (hour == "9" && minute == "35") open(eng_cla);
+                    //英语双杀
+                    //英语三杀
+                    else if (hour == "13" && minute == "15" && PE) open(pe);
+                    else if (hour == "14" && minute == "15" && zixike) open(zixi);
+                    else if (hour == "15" && minute == "10" && PE) open("https://wx.vzan.com/live/page/0660ED8FA2C4448E601EBFF1087596A4?topicid=758435296&shauid=undefined&vprid=0&sharetstamp=1655246803745");
+                    // else if (hour == "16" && minute == "0") open(mathcom); 生日仪式，删除
+                } else if (day == "5") {
+                    if (hour == "7" && minute == "20") open(histor);
+                    else if (hour == "7" && minute == "55") open(maths);
+                    else if (hour == "8" && minute == "45") open(chinese);
+                    else if (hour == "9" && minute == "35") open(eng_cla);
+                    else if (hour == "10" && minute == "30") open(lifesci);
+                    else if (hour == "11" && minute == "20" && zixike) open(zixi); 
+                    else if (hour == "13" && minute == "15") open(histor);
+                    else if (hour == "14" && minute == "15") open(law);
+                    else if (hour == "15" && minute == "10") open(classme);
+                }
+                if(hour == "18" && minute == "0") open(evening);
+            }
+            setInterval(() => {
+                check();
+            }, 59500);
+        </script>
+
+        <!-- 更新日志：1.1：可以直接进入会议室；1.2：更换为ANSI编码，在iOS备忘录中可以正常打开；   -->
+        <!--          2.0：改为将课程会议室链接嵌入课表中；2.1：优化了一些细节；2.2：加入日期提示。 -->
+        <!--          3.0（2.3）：可以提前五分钟自动入会，并优化了许多细节，修正了错误的体育会议链接 -->
+        <!--          3.1：调整框架，方便调整课程 -->
+        <!--          server-3.2：加入站长手动更新的晚自习直接入会通道、自动入会 -->
+    </body>
+</html>

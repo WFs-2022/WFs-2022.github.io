@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+        <title>click speed tester</title>
+        <link rel="shortcut icon" href="./pictures/CST-ico.png">
+        <style>
+            html, body {
+                margin: 0;
+            }
+            div {
+                -webkit-user-select: none;
+                -moz-user-seletct: none;
+                user-select: none;
+                text-align: center;
+                margin: 0 auto;
+            }
+            h1 {
+                margin-top: 10%;
+            }
+            #btn {
+                font-size: larger;
+            }
+            #back {
+                font-size: x-large;
+                background-color: #aaaaaa;
+                color: white;
+                border-radius: 5px;
+                border: 0;
+                width: 40px;
+                height: 40px;
+                text-align: left;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="back" title="返回" onclick="javascript:window.location='./index.html'" onmouseover="javascript:document.getElementById('back').style.backgroundColor='#cccccc'" onmouseleave="javascript:document.getElementById('back').style.backgroundColor='#aaaaaa'">&nbsp;<</button>
+        <div>
+            <h1>Click as fast as you can for 15 seconds!</h1>
+            <br>
+            <button id="btn" onclick="clicked()">Click to start!</button>
+            <br><br>
+            <h3 id="timecounter">Rest time: 00.00s</h3>
+            <h3 id="clickcounter">Clicked time: 0</h3>
+            <h3 id="bestshower">Best speed: 0 click per second</h3>
+        </div>
+        <script>
+            var started=false, resttime=0.0, clickedtimes=0, bestspeed=0;
+            var tcounter=document.getElementById("timecounter");
+            var ccounter=document.getElementById("clickcounter");
+            var bstshower=document.getElementById("bestshower");
+            var button=document.getElementById("btn");
+
+            window.onload=function(){
+                var arr1 = document.cookie.split(';');
+                for(var i = 0; i < arr1.length; i++){
+                    var arr2 = arr1[i].split('=');
+                    if(arr2[0] == 'bestspeed'){
+                        bestspeed=arr2[1];
+                    if(bestspeed>1) bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" times per second";
+                    else bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" time per second";
+                    }
+                }
+            }
+            function clicked() {
+                if(started){
+                    clickedtimes++;
+                    if(clickedtimes>1) ccounter.innerText="Clicked times: " + clickedtimes;
+                    else ccounter.innerText="Clicked time: " + clickedtimes;
+                }else{
+                    clickedtimes=0;
+                    testing();
+                }
+            }
+            function testing(){
+                started=true;
+                button.innerText="Click it!"
+                resttime=15.00;
+                var timerid=setInterval(() => {
+                    resttime=parseFloat(resttime-0.05).toFixed(2);
+                    tcounter.innerText="Rest time:" + resttime + "s";
+                    if(resttime==0) clearInterval(timerid);
+                }, 50);
+                setTimeout(() => {
+                    if(bestspeed<(clickedtimes/15)){
+                        var oDate = new Date();
+                        oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+                        bestspeed=(clickedtimes/15);
+                        document.cookie="bestspeed="+bestspeed+"; expires="+oDate.toGMTString();
+                    }
+                    if(bestspeed>1) bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" times per second";
+                    else bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" time per second";
+                    button.innerText="Click to start again!";
+                    started=false;
+                }, 15000);
+            }
+        </script>
+    </body>
+</html>

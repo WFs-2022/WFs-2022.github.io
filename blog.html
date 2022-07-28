@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WsF's blog</title>
+    <title>WsF的博客</title>
     <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
+    <link rel="stylesheet" href="css.css">
     <style>
-        * {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
+        #top {
+            position: fixed;
+            width: 100%;
+            margin: 0;
         }
 
         a, p {
             display: inline; 
-        }
-
-        body {
-            margin: 0px;
-            background-color: #e7e0c6;
         }
     
         input {
@@ -29,7 +25,6 @@
         jmplnk {
             top: -75px;
             position: relative;
-
         }
 
         pre {
@@ -58,6 +53,7 @@
             width: 850px;
             border-radius: 3px;
             background-color: #faf9de;
+            margin: 20px;
             box-shadow: 0 0 3px 3px #faf9de; 
         }
 
@@ -71,44 +67,23 @@
         }
     
         #blog {
-            margin-top: 80px;
+            padding-top: 80px;
             margin-left: 30px;
             width: 850px;
         }
-    
-        #header {
-            z-index: 100;
-            margin: 0px;
-            border: 0px;
-            position: fixed;
-            top: 0px;
-            margin: 0px;
-            width: 100%;
-            height: 55px;
-            background-color: #66ccff;
-            align-items: center;
-            box-shadow: 0 0 3px 3px #6cf; 
-        }
-    
-        #title {
-            float: left;
-            margin-left: 10px;
-            margin-top: 10px;
-            text-align: left;
-        }
-    
-        #links { 
-            margin-right: 10px;
-            float: right;
-            margin-top: 15px;
-            text-align: right;
-            width: 200px;
-        }
 
         #tojump {
+            opacity: 0.5;
             position: absolute;
-            right: 5px;
-            margin-top: 60px;
+            left: 5px;
+            margin-top: 30px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 3px #ddd;
+            background-color: #fff;
+        }
+        #tojump:hover {
+            opacity: 1;
         }
 
         #footer {
@@ -118,12 +93,9 @@
     </style>
 </head>
 <body>
-    <div id="header">
-        <h2 id="title">WsF的博客（日志）</h2>
-        <div id="links">
-            <a class="linker" href="./index.html">🏰主站 </a>
-            <a class="linker" href="./blog.html">📕博客(日志) </a>
-        </div>
+    <div id="top">
+        <div id="title"><h2>WsF的博客</h2></div>
+        <button id="menu" title="菜单">≡</button>
         <div id="tojump">
             <label for="jumper" id="label">跳转至：</label>
             <input type="date" name="jumper" id="jumper" min="2022-06-18" value="2022-06-18">
@@ -237,9 +209,56 @@ function atk(depth){
         <div id="footer"><p>--------------------------------------------- The end ---------------------------------------------</p></div>
         <br>
     </div>
+    <div id="bottom" style="position: initial;">
+        <div id="friends" style="position: initial;">
+            <p>友链：</p><br>
+            <a href="http://ronin.free.svipss.top/">Ronin LJ的博客</a>
+        </div>
+        <div id="refer" style="position: relative; width: 200px; margin-left: calc(100%-200px);">
+            <p>Power by Github Page.</p>
+        </div>
+    </div>
 
-
+    <div id="menupage">
+        <div class="menuitems"><a href="./index.html">🏰主站</a></div>
+        <div class="menuitems"><a href="./blog.html">📕博客</a></div>
+        <div class="menuitems"><a href="javascript:donate();">😜资助</a></div>
+    </div>
+    <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
+    <div>
+        <picture>
+            <img onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';" id="donate" title="donate" src="./pictures/Donater.jpg">
+        </picture>
+    </div>
     <script>
+        var menuOpen = false, menuRun = false;
+        let menuBtn = document.getElementById("menu");
+        let menuPge = document.getElementById("menupage");
+        menuBtn.onclick=() => {
+            if(!menuRun){
+                if(!menuOpen){
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                    }, 1000);
+                    menuPge.style.animationName="menuopen";
+                    menuPge.style.height="calc(100% - 100px)";
+                    menuOpen = true;
+                }else {
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                    }, 1000);
+                    menuPge.style.animationName="menuclose";
+                    menuPge.style.height="0px";
+                    menuOpen = false;
+                }
+            }
+        }
+        function donate() {
+            document.getElementById('mask').style.display='block';
+            document.getElementById('donate').style.display='block';
+        }
         function find() {
             var inp = document.getElementById("jumper").value;
             var input = inp.toString();

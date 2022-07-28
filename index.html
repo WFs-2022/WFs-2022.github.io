@@ -1,171 +1,102 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
-        <title>WsF的小站</title>
-        <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
-        <style>
-            * {
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-            }
-            a {
-                font-size: larger;
-                text-decoration: none;
-            }
-            body, html {
-                margin: 0px;
-                border: 0px;
-                background-color: #deffde;
-            }
-            div {
-                float: left;
-                width: 110px;
-                text-align: center;
-            }
-            picture, img {
-                margin: 0px;
-                height: 90px;
-                width: 90px;
-            }
-            .boxes {
-                margin: 10px;
-            }
-            .normal {
-                color: blue;
-            }
-            .epic {
-                color: #DD00DD;
-            }
-            .legendary {
-                color: orange;
-            }
-            .linker, button {
-                margin-left: 10px;
-                background-color: whitesmoke;
-                border-radius: 3px;
-                border: 0;
-                padding: 0;
-                text-decoration: none;
-                font-size: large;
-                color: black;
-            }
-            #header {
-                position: fixed;
-                top: 0px;
-                margin: 0px;
-                width: 100%;
-                height: 55px;
-                background-color: #66ccff;
-                align-items: center;
-                box-shadow: 0 0 3px 3px #6cf; 
-                z-index: 10;
-            }
-            #title {
-                float: left;
-                margin-left: 10px;
-                margin-top: 10px;
-                text-align: left;
-            }
-            #links {
-                margin-right: 10px;
-                float: right;
-                margin-top: 15px;
-                text-align: right;
-                width: 400px;
-            }
-            #container {
-                clear: both;
-                width: 550px;
-                text-align: center;
-                position: relative;
-                top: 60px;
-                margin-left: -275px;
-                left: 50%;
-            }
-            #donate {
-                margin: 0px;
-                border-spacing: 0px;
-                margin: -204.9px 0px 0px -150.9px;
-                position: absolute;
-                display: none;
-                top: 50%;
-                left: 50%;
-                width: 301.8px;
-                height: 409.8px;
-            }
-            #mask {
-                display: none;
-                position: absolute;
-                width: auto;
-                margin: 0;
-                float: none;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-                background-color: #666;
-                opacity: 0.2;
-            }
-            #footer {
-                text-align: right;
-                position: absolute;
-                bottom: 0px;
-                width: 95%;
-            }
-            #rickroll {
-                font-family: "Comic Sans MS", "Comic Sans", cursive;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="header">
-            <h2 id="title">WsF的小站</h2>
-            <div id="links">
-                <button type="button" onclick="javascript:document.getElementById('mask').style.display='block';document.getElementById('donate').style.display='block';">😜资助&nbsp;</button>
-                <a class="linker" href="./index.html">🏰主站 </a>
-                <a class="linker" href="./blog.html">📕博客(日志) </a>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
+    <title>WsF的小站</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="top">
+        <div id="title"><h2>WsF的小站</h2></div>
+        <button id="menu" title="菜单">≡</button>
+    </div>
+    <div id="middle">
+        <div class="items" title="来自Github" onclick="javascript:window.location='./music-unlocker/index.html'">
+            <picture><img class="itempicts" title="来自Github" src="./music-unlocker/img/icons/favicon-32x32.png" /></picture>
+            <p class="itemnames">音乐解锁</p>
         </div>
-        <div id="container">
-            <div class="boxes"><a href="./超课表3.1.html" class="legendary">
-                <picture><img title="Hyper Schedule" src="./pictures/HyperSchedule-ico.png" /></picture>
-                超课表3.1
-            </a></div>
-            <div class="boxes"><a href="./CST.html" class="epic">
-                <picture><img title="CLick Speed Tester" src="./pictures/CST-ico.png" /></picture>
-                Click Speed Tester
-            </a></div>
-            <div class="boxes"><a href="./Downloads.html" class="normal">
-                <picture><img title="index of downloads" src="./pictures/Download-ico.png" /></picture>
-                Index of downloads
-            </a></div>
-            <div class="boxes"><a href="./play.html" id="rickroll" class="epic">
-                <picture><img title="Rick Roll" src="./pictures/a_lie-icon.png" /></picture>
-                real online game
-            </a></div>
-            <div class="boxes"><a href="./notice.html" class="normal">
-                <picture><img title="notice" src="./pictures/notes-ico.png" /></picture>
-                notices
-            </a></div>
-            <div class="boxes"><a href="./m3u8-downloader-master/index.html" class="legendary">
-                <picture><img title="m3u8" src="./m3u8-downloader-master/M3U8-ico.png" /></picture>
-                m3u8 downloader (Github)
-            </a></div>
-            <div class="boxes"><a href="./music-unlocker/" class="legendary">
-                <picture><img title="m3u8" src="./music-unlocker/favicon.ico" /></picture>
-                music-unlocker (Github)
-            </a></div>
+        <div class="items" title="来自GitHub" onclick="javascript:window.location='./m3u8-downloader-master/index.html'">
+            <picture><img class="itempicts" title="来自Github" src="./m3u8-downloader-master/M3U8-ico.png" /></picture>
+            <p class="itemnames">M3U8下载器</p>
         </div>
-        <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
-        <div>
-            <picture>
-                <img onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';" id="donate" title="donate" src="./pictures/Donater.jpg">
-            </picture>
+        <div class="items" onclick="javascript:window.location='./CST.html'">
+            <picture><img class="itempicts" src="./pictures/CST-ico.png" /></picture>
+            <p class="itemnames">点击速度测试</p>
         </div>
-        <div id="footer">
-            <p>Powered by GitHub Page.</p>
+        <div class="items" onclick="javascript:window.location='./play.html'">
+            <picture><img class="itempicts" src="./pictures/a_lie-icon.png" /></picture>
+            <p class="itemnames">小游戏</p>
         </div>
-    </body>
+        <div class="items" onclick="javascript:window.location='./notice.html'">
+            <picture><img class="itempicts" src="./pictures/notes-ico.png" /></picture>
+            <p class="itemnames">站长留言</p>
+        </div>
+        <div class="items" onclick="javascript:window.location='./Downloads.html'">
+            <picture><img class="itempicts" src="./pictures/Download-ico.png" /></picture>
+            <p class="itemnames">资源下载</p>
+        </div>
+        <div class="items" onclick="javascript:window.location='./超课表3.1.html'">
+            <picture><img class="itempicts" src="./pictures/HyperSchedule-ico.png" /></picture>
+            <p class="itemnames">超课表</p>
+        </div>
+        <div class="items" title="待做中" onclick="javascript:window.location='./TodoApp.html'">
+            <picture><img title="待做中" class="itempicts" src="./pictures/WsF.png" /></picture>
+            <p class="itemnames"><del>待做列表</del></p>
+        </div>
+    </div>
+    <div id="bottom">
+        <div id="friends">
+            <p>友链：</p>
+            <a href="http://ronin.free.svipss.top/">Ronin LJ的博客</a>
+        </div>
+        <div id="refer">
+            <p>Power by Github Page.</p>
+        </div>
+    </div>
+
+    <div id="menupage">
+        <div class="menuitems"><a href="./index.html">🏰主站</a></div>
+        <div class="menuitems"><a href="./blog.html">📕博客</a></div>
+        <div class="menuitems"><a href="javascript:donate();">😜资助</a></div>
+    </div>
+    <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
+    <div>
+        <picture>
+            <img onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';" id="donate" title="donate" src="./pictures/Donater.jpg">
+        </picture>
+    </div>
+    <script>
+        var menuOpen = false, menuRun = false;
+        let menuBtn = document.getElementById("menu");
+        let menuPge = document.getElementById("menupage");
+        menuBtn.onclick=() => {
+            if(!menuRun){
+                if(!menuOpen){
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                    }, 1000);
+                    menuPge.style.animationName="menuopen";
+                    menuPge.style.height="calc(100% - 100px)";
+                    menuOpen = true;
+                }else {
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                    }, 1000);
+                    menuPge.style.animationName="menuclose";
+                    menuPge.style.height="0px";
+                    menuOpen = false;
+                }
+            }
+        }
+        function donate() {
+            document.getElementById('mask').style.display='block';
+            document.getElementById('donate').style.display='block';
+        }
+    </script>
+</body>
 </html>

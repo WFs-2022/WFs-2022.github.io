@@ -78,8 +78,10 @@ body {
 }
 
 #menupage {
+    display: none;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
+    float: right;
     height: 0px;
     width: 30%;
     min-width: 200px;
@@ -111,12 +113,12 @@ body {
         height: 0px;
     }
     to {
-        height: calc(100% - 100px);
+        height: calc(100% - 170px);
     }
 }
 @keyframes menuclose {
     from {
-        height: calc(100% - 100px);
+        height: calc(100% - 170px);
     }
     to {
         height: 0px;

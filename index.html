@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
-    <title>WsF的小站</title>
+    <title>WsF的小站（持续开发中）</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -50,7 +50,7 @@
     <div id="bottom">
         <div id="friends">
             <p>友链：</p>
-            <a href="http://ronin.free.svipss.top/">Ronin LJ的博客</a>
+            <a href="http://ronin.free.svipss.top/">LJ的博客</a>
         </div>
         <div id="refer">
             <p>Power by Github Page.</p>
@@ -60,7 +60,8 @@
     <div id="menupage">
         <div class="menuitems"><a href="./index.html">🏰主站</a></div>
         <div class="menuitems"><a href="./blog.html">📕博客</a></div>
-        <div class="menuitems"><a href="javascript:donate();">😜资助</a></div>
+        <div class="menuitems"><a href="">👦个人主页</a></div>
+        <div class="menuitems"><a href="javascript:donate();">💰资助</a></div>
     </div>
     <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
     <div>
@@ -85,13 +86,15 @@
                     setTimeout(() => {
                         menuRun=false;
                     }, 1000);
+                    menuPge.style.display="block";
                     menuPge.style.animationName="menuopen";
-                    menuPge.style.height="calc(100% - 100px)";
+                    menuPge.style.height="calc(100% - 170px)";
                     menuOpen = true;
                 }else {
                     menuRun = true;
                     setTimeout(() => {
                         menuRun=false;
+                        menuPge.style.display="none";
                     }, 1000);
                     menuPge.style.animationName="menuclose";
                     menuPge.style.height="0px";

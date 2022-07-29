@@ -5,9 +5,6 @@
         <title>click speed tester</title>
         <link rel="shortcut icon" href="./pictures/CST-ico.png">
         <style>
-            html, body {
-                margin: 0;
-            }
             div {
                 -webkit-user-select: none;
                 -moz-user-seletct: none;
@@ -22,21 +19,29 @@
                 font-size: larger;
             }
             #back {
-                font-size: x-large;
-                background-color: #aaaaaa;
-                color: white;
+                opacity: 0.8;
+                position: absolute;
+                left: 0;
                 border-radius: 5px;
-                border: 0;
+                font-size: x-large;
+                background-color: #bbb;
+                color: white;
                 width: 40px;
-                height: 40px;
-                text-align: left;
-                margin: 0;
+                height: 60px;
+                box-shadow: 0px 3px 3px 3px #ddd;
+            }
+            #back:hover {
+                background-color: #ccc;
             }
         </style>
+        <link rel="stylesheet" href="css.css">
     </head>
     <body>
-        <button id="back" title="返回" onclick="javascript:window.location='./index.html'" onmouseover="javascript:document.getElementById('back').style.backgroundColor='#cccccc'" onmouseleave="javascript:document.getElementById('back').style.backgroundColor='#aaaaaa'">&nbsp;<</button>
-        <div>
+        <div id="top">
+            <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+            <div id="title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;点击速度测试</h2></div>
+        </div>
+        <div id="body">
             <h1>Click as fast as you can for 15 seconds!</h1>
             <br>
             <button id="btn" onclick="clicked()">Click to start!</button>

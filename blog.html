@@ -108,6 +108,16 @@
         #tojump:hover {
             opacity: 1;
             box-shadow: 3px 3px 6px 6px #ddd;
+            animation-name: tojumphover;
+            animation-duration: 0.1s;
+        }
+        @keyframes tojumphover {
+            from {
+                box-shadow: 3px 3px 3px 3px #ddd;
+            }
+            to {
+                box-shadow: 3px 3px 6px 6px #ddd;
+            }
         }
     </style>
 </head>
@@ -235,7 +245,7 @@ function atk(depth){
     <div id="bottom" style="position: initial;">
         <div id="friends">
             <p>友链：</p><br>
-            <a href="http://ronin.free.svipss.top/">Ronin LJ的博客</a>
+            <a href="http://ronin.free.svipss.top/">LJ的博客</a>
         </div>
         <div id="refer">
             <p>Power by Github Page.</p>
@@ -245,7 +255,8 @@ function atk(depth){
     <div id="menupage">
         <div class="menuitems"><a href="./index.html">🏰主站</a></div>
         <div class="menuitems"><a href="./blog.html">📕博客</a></div>
-        <div class="menuitems"><a href="javascript:donate();">😜资助</a></div>
+        <div class="menuitems"><a href="">👦个人主页</a></div>
+        <div class="menuitems"><a href="javascript:donate();">💰资助</a></div>
     </div>
     <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
     <div>
@@ -264,13 +275,15 @@ function atk(depth){
                     setTimeout(() => {
                         menuRun=false;
                     }, 1000);
+                    menuPge.style.display="block";
                     menuPge.style.animationName="menuopen";
-                    menuPge.style.height="calc(100% - 100px)";
+                    menuPge.style.height="calc(100% - 170px)";
                     menuOpen = true;
                 }else {
                     menuRun = true;
                     setTimeout(() => {
                         menuRun=false;
+                        menuPge.style.display="none";
                     }, 1000);
                     menuPge.style.animationName="menuclose";
                     menuPge.style.height="0px";

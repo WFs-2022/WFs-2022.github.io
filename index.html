@@ -69,6 +69,12 @@
         </picture>
     </div>
     <script>
+        window.onload=()=>{
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                if(confirm("抱歉，本页面暂不适配移动设备，页面元素可能发生位移等现象，望谅解。。(选“是”进入博客)"))
+                    window.location="./blog.html";
+            }
+        }
         var menuOpen = false, menuRun = false;
         let menuBtn = document.getElementById("menu");
         let menuPge = document.getElementById("menupage");

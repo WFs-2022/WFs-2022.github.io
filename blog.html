@@ -23,19 +23,22 @@
         }
     
         jmplnk {
-            top: -75px;
+            top: -115px;
             position: relative;
         }
 
         pre {
             user-select: text;
-            margin-left: 10px;
-            width: 800px;
+            margin: 10px 0 0 10px;
+            width: calc(100% - 20px);
+            overflow: scroll;
             border-radius: 5px;
             background-color: #111111;
             color: #ededed;
             font-size: large;
             font-family: consolas;
+            overflow-y: hidden;
+            overflow-x: auto;
         }
         
         window {
@@ -43,18 +46,44 @@
             font-size: x-small;
             position: absolute;
             height: 20px;
-            width: 800px;
+            width: calc(80% - 44px);
             border-radius: 5px 5px 0px 0px;
             line-height: 20px;
             overflow: hidden;
         }
 
+    
+        #blog {
+            padding-top: 80px;
+            margin-left: 30px;
+            width: calc(100% - 30px);
+        }
         .blogs {
-            width: 850px;
-            border-radius: 3px;
-            background-color: #faf9de;
-            margin: 20px;
-            box-shadow: 0 0 3px 3px #faf9de; 
+            width: 80%;
+            padding: 2%;
+            margin: 15px 15% 0 3%;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 3px 3px #ddd;
+        }
+        .blogs:hover {
+            animation-name: bloghover;
+            animation-duration: 0.1s;
+            background-color: #fff;
+            box-shadow: 0px 0px 6px 6px #ddd;
+        }
+        @keyframes bloghover {
+            from {
+                background-color: #fff;
+                box-shadow: 0px 0px 3px 3px #ddd;
+            }
+            to {
+                background-color: #fff;
+                box-shadow: 0px 0px 6px 6px #ddd;
+            }
+        }
+        .blogs h2 {
+            margin: 0 0 5px -1%;
         }
 
         .linker {
@@ -65,17 +94,11 @@
             font-size: large;
             color: black;
         }
-    
-        #blog {
-            padding-top: 80px;
-            margin-left: 30px;
-            width: 850px;
-        }
 
         #tojump {
             opacity: 0.5;
             position: absolute;
-            left: 5px;
+            right: 5px;
             margin-top: 30px;
             padding: 10px;
             border-radius: 10px;
@@ -84,11 +107,7 @@
         }
         #tojump:hover {
             opacity: 1;
-        }
-
-        #footer {
-            text-align: center;
-            color: #808080;
+            box-shadow: 3px 3px 6px 6px #ddd;
         }
     </style>
 </head>
@@ -111,6 +130,11 @@
         </div> -->
         
         <div class="blogs">
+            <jmplnk id="2022-07-28"></jmplnk>
+            <h2>2022/7/28</h2>
+            <p>基本重写完了主站和博客的代码~接下来是一些小应用的风格统一了~</p>
+        </div>
+        <div class="blogs">
             <jmplnk id="2022-07-27"></jmplnk>
             <h2>2022/7/27</h2>
             <p>干脆拿GitHub Page做网站的试运行好了~（以后再租服务器）</p><br>
@@ -120,7 +144,7 @@
             <jmplnk id="2022-06-26"></jmplnk>
             <h2>2022/6/26</h2>
             <p>看起来我的网站用了https导致不能直接用BeEF进行XSS攻击啊。。</p><br>
-            <p>看来https还挺安全的（</p>
+            <p>看来https还挺安全的（</p><br>
             <p>msdt-follina的PoC为什么我不会用呢。。</p>
         </div>
         <div class="blogs">
@@ -133,7 +157,7 @@
             <jmplnk id="2022-06-24"></jmplnk>
             <h2>2022/6/24</h2>
             <p>第二次在B站投稿了！</p><br>
-            <a href="https://www.bilibili.com/video/BV1UT411g7FV/">🔗本想用偏置类横转三刀流，但我对三刀流一无所知</a> 
+            <a href="https://www.bilibili.com/video/BV1UT411g7FV/">🔗【RR2】自制机器：我对三刀流一无所知</a> 
         </div>
         <div class="blogs">
             <jmplnk id="2022-06-22"></jmplnk>
@@ -206,15 +230,14 @@ function atk(depth){
     }, 800);
 }</pre></p>
         </div>
-        <div id="footer"><p>--------------------------------------------- The end ---------------------------------------------</p></div>
-        <br>
+        <br><br>
     </div>
     <div id="bottom" style="position: initial;">
-        <div id="friends" style="position: initial;">
+        <div id="friends">
             <p>友链：</p><br>
             <a href="http://ronin.free.svipss.top/">Ronin LJ的博客</a>
         </div>
-        <div id="refer" style="position: relative; width: 200px; margin-left: calc(100%-200px);">
+        <div id="refer">
             <p>Power by Github Page.</p>
         </div>
     </div>

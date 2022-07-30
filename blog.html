@@ -51,41 +51,7 @@
             line-height: 20px;
             overflow: hidden;
         }
-
-    
-        #blog {
-            padding-top: 80px;
-            margin-left: 30px;
-            width: calc(100% - 30px);
-        }
-        .blogs {
-            width: 80%;
-            padding: 2%;
-            margin: 15px 15% 0 3%;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0px 0px 3px 3px #ddd;
-        }
-        .blogs:hover {
-            animation-name: bloghover;
-            animation-duration: 0.1s;
-            background-color: #fff;
-            box-shadow: 0px 0px 6px 6px #ddd;
-        }
-        @keyframes bloghover {
-            from {
-                background-color: #fff;
-                box-shadow: 0px 0px 3px 3px #ddd;
-            }
-            to {
-                background-color: #fff;
-                box-shadow: 0px 0px 6px 6px #ddd;
-            }
-        }
-        .blogs h2 {
-            margin: 0 0 5px -1%;
-        }
-
+        
         .linker {
             margin-left: 10px;
             background-color: whitesmoke;
@@ -133,43 +99,43 @@
     </div>
     <div id="blog">
         <!-- 
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id=""></jmplnk>
             <h2></h2>
             <p></p>
         </div> -->
         
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-07-28"></jmplnk>
             <h2>2022/7/28</h2>
             <p>基本重写完了主站和博客的代码~接下来是一些小应用的风格统一了~</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-07-27"></jmplnk>
             <h2>2022/7/27</h2>
             <p>干脆拿GitHub Page做网站的试运行好了~（以后再租服务器）</p><br>
             <p>旧的内网穿透的网站，就关着不开了吧~</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-26"></jmplnk>
             <h2>2022/6/26</h2>
             <p>看起来我的网站用了https导致不能直接用BeEF进行XSS攻击啊。。</p><br>
             <p>看来https还挺安全的（</p><br>
-            <p>msdt-follina的PoC为什么我不会用呢。。</p>
+            <p>（msdt-follina的PoC为什么我不会用呢。。）</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-25"></jmplnk>
             <h2>2022/6/25</h2>
             <p>新电脑到了！配置够高，装上了VMWare :)</p><br>
             <p>于是装了Kali、Ubuntu虚拟机~</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-24"></jmplnk>
             <h2>2022/6/24</h2>
             <p>第二次在B站投稿了！</p><br>
             <a href="https://www.bilibili.com/video/BV1UT411g7FV/">🔗【RR2】自制机器：我对三刀流一无所知</a> 
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-22"></jmplnk>
             <h2>2022/6/22</h2>
             <p>期末考逝的最后一天~~</p><br>
@@ -177,14 +143,14 @@
             <p>[14:42] 物理？（反正估不出分）（会意外地不意外吗）</p><br>
             <p>[16:46] 历史结束了！已经结束了！！！</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-21"></jmplnk>
             <h2>2022/6/21</h2>
             <p>期末考逝的第一天~</p><br>
             <p>[11:50] 语文难度似乎挺正常的（不会估分的屑）（没考岳阳楼记？我不理解）</p><br>
             <p>[15:09] 数学结束了！看起来不难，不出意外应该挺好（不出意外，会出意外）</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-20"></jmplnk>
             <h2>2022/6/20</h2>
             <p>背书之余，给博客、主站加了一点效果：模糊边缘、macOS窗口式代码栏：</p>
@@ -223,12 +189,12 @@ CSS：（最后编辑于2022/6/22）
             <br><p>另外，<b>display: fixed;</b> 会使得元素固定在页面的某个位置，如 #header；<br>
             <b>z-index: </b>加数字表示元素显示优先级。</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-19"></jmplnk>
             <h2>2022/6/19</h2>
             <p>背书之余（不背书就wán喽），对博客、主站进行了完善。</p>
         </div>
-        <div class="blogs">
+        <div class="blocks">
             <jmplnk id="2022-06-18"></jmplnk>
             <h2>2022/6/18</h2>
             <p>对Undertale fight.html进行修改：在 攻击 循环处可以尝试使用一下代码来实现连续定时移动。
@@ -245,7 +211,7 @@ function atk(depth){
     <div id="bottom" style="position: initial;">
         <div id="friends">
             <p>友链：</p><br>
-            <a href="http://ronin.free.svipss.top/">LJ的博客</a>
+            <del><a href="http://ronin.free.svipss.top/">LJ的博客</a></del>
         </div>
         <div id="refer">
             <p>Power by Github Page.</p>
@@ -255,7 +221,7 @@ function atk(depth){
     <div id="menupage">
         <div class="menuitems"><a href="./index.html">🏰主站</a></div>
         <div class="menuitems"><a href="./blog.html">📕博客</a></div>
-        <div class="menuitems"><a href="">👦个人主页</a></div>
+        <div class="menuitems"><a href="./myself.html">👦个人主页</a></div>
         <div class="menuitems"><a href="javascript:donate();">💰资助</a></div>
     </div>
     <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>

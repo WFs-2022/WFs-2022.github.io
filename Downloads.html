@@ -5,43 +5,42 @@
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">    
         <title>下载</title>
         <link rel="shortcut icon" href="./pictures/Download-ico.png">
+        <link rel="stylesheet" href="./css.css">
         <style>
-            * {
-                margin-left: 1%;
-            }
             a {
-                color: blue;
+                color: #00f;
                 font-size: larger;
+                text-decoration: none;
             }
-            body {
-                margin: 0;
-            }
-            html {
-                margin: 0;
-            }
-            #back {
-                font-size: larger;
-                background-color: #aaaaaa;
-                color: white;
+            #WZYX {
+                user-select: text;
+                -moz-user-select: text;
+                -webkit-user-select: text;
+                padding: 8px;
                 border-radius: 5px;
-                border: 0;
-                margin-left: 0;
-                margin-top: 0;
-                width: 40px;
-                height: 40px;
+                font-size: small;
+                width: fit-content;
+                box-shadow: inset 0 0 2px 2px #ddd;
             }
         </style>
     </head>
     <body>
-        <button id="back" title="返回" onclick="javascript:window.location='./index.html'" onmouseover="javascript:document.getElementById('back').style.backgroundColor='#cccccc'" onmouseleave="javascript:document.getElementById('back').style.backgroundColor='#aaaaaa'"><</button>
-        <h1>下载文件列表：</h1>
-        <h5>个人所写文件（Windows平台，C++写的，源码可以私信我）: </h5>
-        <a href="./resources/文字游戲：第零章.exe">文字游戲：第零章</a><br>
-        <a href="./resources/GameofLife.exe">生命游戏</a><br>
-        <a href="./resources/Brainf__k Compiler.exe">Brainf**k语言简易编译器</a><br>
-        <h5>其他（有的从我的超星云盘下载，不会耗费我的网站的流量😁）：</h5>
-        <a href="./resources/win31.iso">Windows3.1</a><br>
-        <a href="https://pan-yz.chaoxing.com/external/m/file/734124573091684352">MSDOS_7.1(.iso)</a><br>
-        <a href="https://pan-yz.chaoxing.com/external/m/file/725467144746811392">ubuntu-22.04-live-server-amd64</a>(源文件下载自官网)<br>
+        <div id="top">
+            <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+            <div id="title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;下载文件列表</h2></div>
+        </div>
+        <div class="blocks">
+            <h2>个人所写文件: </h2>
+            <a href="./resources/文字游戲：第零章.exe">文字游戲：第零章</a><br>
+            <p id="WZYX">“文字游戲：第零章”仍待进一步开发；运行需要D盘；删除时，请在命令行输入：<br>D:\\文字游戲 /S /Q & RD D:\\twzyxdata /S /Q</p>
+            <a href="./resources/GameofLife.exe">生命游戏</a><br>
+            <a href="./resources/Brainf__k Compiler.exe">Brainf**k语言简易编译器</a><br>
+        </div>
+        <div class="blocks">
+            <h2>其他（部分会从我的超星云盘下载）：</h2>
+            <a href="./resources/win31.iso">Windows3.1</a><br>
+            <a href="https://pan-yz.chaoxing.com/external/m/file/734124573091684352">MSDOS_7.1(.iso)</a><br>
+            <a href="https://pan-yz.chaoxing.com/external/m/file/725467144746811392">ubuntu-22.04-live-server-amd64</a>(源文件下载自官网)<br>
+        </div>
     </body>
 </html>

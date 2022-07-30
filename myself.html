@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>WsF的个人简介</title>
+</head>
+<body>
+    <div id="top">
+        <div id="title"><h2>WsF的个人简介</h2></div>
+        <button id="menu" title="菜单">≡</button>
+    </div>
+    <div id="body">
+        <div class="blocks">
+            <h2>概述</h2>
+            <p>ESHS初三学生一名~</p>
+            <p>喜欢玩格斗机器人（和模拟器）、写代码（C++、HTML、CSS……）、打羽毛球、吹手埙，会竹笛，也喜欢搞搞网安方面的东西。</p>
+        </div>
+        <div class="blocks">
+            <h2>账号链接</h2>
+            <picture>
+                <img class="linkicons" src="https://www.bilibili.com/favicon.ico?v=1">
+            </picture>
+            <a id="bilibili" href="https://space.bilibili.com/518624115">bilibili</a><br>
+            <picture>
+                <img class="linkicons" src="https://github.com/fluidicon.png">
+            </picture>
+            <a href="https://github.com/WFs-2022">Github</a><br>
+            <picture>
+                <img class="linkicons" src="https://www.luogu.com.cn/favicon.ico">
+            </picture>
+            <a href="https://www.luogu.com.cn/user/364325">洛谷</a><br>
+            
+        </div>
+    </div>
+    <div id="bottom">
+        <div id="friends">
+            <p>友链：</p>
+            <del><a href="http://ronin.free.svipss.top/">LJ的博客</a></del>
+        </div>
+        <div id="refer">
+            <p>Power by Github Page.</p>
+        </div>
+    </div>
+
+    <div id="menupage">
+        <div class="menuitems"><a href="./index.html">🏰主站</a></div>
+        <div class="menuitems"><a href="./blog.html">📕博客</a></div>
+        <div class="menuitems"><a href="./myself.html">👦个人主页</a></div>
+        <div class="menuitems"><a href="javascript:donate();">💰资助</a></div>
+    </div>
+    <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
+    <div>
+        <picture>
+            <img onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';" id="donate" title="donate" src="./pictures/Donater.jpg">
+        </picture>
+    </div>
+    <script>
+        // window.onload=()=>{
+        //     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        //         if(confirm("抱歉，本页面暂不适配移动设备，页面元素可能发生位移等现象，望谅解。。(选“是”进入博客)"))
+        //             window.location="./blog.html";
+        //     }
+        // }
+        var menuOpen = false, menuRun = false;
+        let menuBtn = document.getElementById("menu");
+        let menuPge = document.getElementById("menupage");
+        menuBtn.onclick=() => {
+            if(!menuRun){
+                if(!menuOpen){
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                    }, 1000);
+                    menuPge.style.display="block";
+                    menuPge.style.animationName="menuopen";
+                    menuPge.style.height="calc(100% - 170px)";
+                    menuOpen = true;
+                }else {
+                    menuRun = true;
+                    setTimeout(() => {
+                        menuRun=false;
+                        menuPge.style.display="none";
+                    }, 1000);
+                    menuPge.style.animationName="menuclose";
+                    menuPge.style.height="0px";
+                    menuOpen = false;
+                }
+            }
+        }
+        function donate() {
+            document.getElementById('mask').style.display='block';
+            document.getElementById('donate').style.display='block';
+        }
+    </script>
+</body>
+</html>

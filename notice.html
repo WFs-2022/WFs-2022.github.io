@@ -4,32 +4,17 @@
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
         <title>站长的留言</title>
         <link rel="shortcut icon" href="./pictures/notes-ico.png">
-        <style>
-            body, html {
-                margin: 0;
-                background-color: #faf9de;
-            }
-            #back {
-                font-size: x-large;
-                background-color: #aaaaaa;
-                color: white;
-                border-radius: 5px;
-                border: 0;
-                margin-left: 0;
-                margin-top: 0;
-                width: 40px;
-                height: 40px;
-                text-align: left;
-            }
-        </style>
+        <link rel="stylesheet" href="css.css">
     </head>
     <body>
-        <button id="back" title="返回" onclick="javascript:window.location='./index.html'" onmouseover="javascript:document.getElementById('back').style.backgroundColor='#cccccc'" onmouseleave="javascript:document.getElementById('back').style.backgroundColor='#aaaaaa'">&nbsp;<</button>    
-        <div>
-            <h1>&nbsp;&nbsp;&nbsp;留言：</h1>
-            <p>&nbsp;&nbsp;过去，网站服务器晚上会关机、有时会关闭服务，导致网站无法访问；现在用Github Page就不担心这个了，流量限制也有100G。</p>
-            <p>&nbsp;&nbsp;一个简单的个人网站。真正意义上的界面嘛，就慢慢写了。。（整个网站除了m3u8Downloader、music-unlocker都是我手敲的！）</p
+        <div id="top">
+            <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+            <div id="title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;站长的留言</h2></div>
         </div>
-        
+        <div class="blocks">
+            <h2>留言：</h2>
+            <p>过去，网站服务器晚上会关机、有时会关闭服务，导致网站无法访问；现在用Github Page就不担心这个了，流量限制也有100G。</p>
+            <p>一个简单的个人网站。真正意义上的界面嘛，就慢慢写了。。（整个网站除了m3u8Downloader、music-unlocker都是我手敲的！）</p>
+        </div>
     </body>
 </html>

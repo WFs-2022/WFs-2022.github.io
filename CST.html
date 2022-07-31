@@ -5,15 +5,24 @@
         <title>click speed tester</title>
         <link rel="shortcut icon" href="./pictures/CST-ico.png">
         <style>
-            div {
-                -webkit-user-select: none;
-                -moz-user-seletct: none;
-                user-select: none;
-                text-align: center;
-                margin: 0 auto;
+            #btn {
+                height: 50px;
+                width: 200px;
+                background-color: #fff;
+                box-shadow: inset 0px 0px 3px 3px #ddd;
             }
-            h1 {
-                margin-top: 10%;
+            #btn:hover {
+                animation-name: btnhover;
+                animation-duration: 0.1s;
+                box-shadow: inset 0px 0px 6px 6px #ddd;
+            }
+            @keyframes btnhover {
+                from {
+                    box-shadow: inset 0px 0px 3px 3px #ddd;
+                }
+                to {
+                    box-shadow: inset 0px 0px 6px 6px #ddd;
+                }
             }
         </style>
         <link rel="stylesheet" href="css.css">
@@ -21,9 +30,9 @@
     <body>
         <div id="top">
             <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
-            <div id="title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;点击速度测试</h2></div>
+            <div id="title"><h2>点击速度测试</h2></div>
         </div>
-        <div id="body">
+        <div class="page">
             <h1>Click as fast as you can for 15 seconds!</h1>
             <br>
             <button id="btn" onclick="clicked()">Click to start!</button>
@@ -32,6 +41,7 @@
             <h3 id="clickcounter">Clicked time: 0</h3>
             <h3 id="bestshower">Best speed: 0 click per second</h3>
         </div>
+
         <script>
             var started=false, resttime=0.0, clickedtimes=0, bestspeed=0;
             var tcounter=document.getElementById("timecounter");

@@ -4,24 +4,15 @@
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
         <title>超课表 Hyper Schedule</title>
         <link rel="shortcut icon" href="./pictures/HyperSchedule-ico.png">
+        <link rel="stylesheet" href="css.css">
         <style>
             a {
                 text-decoration: none;
                 color: blue;
             }
-            body {
-                background-color: #eeeeee;
-                -webkit-user-select: none;
-                -moz-user-seletct: none;
-                user-select: none;
-            }
-            button {
-                background-color: #eeeeee;
-                border-radius: 5px;
-                border: 3px solid gray;
-                margin-left: 2.2%;
-                margin-top: 5px;
-                font-size: medium;
+            .page {
+                margin: 20px auto;
+                width: 90%;
             }
             p {
                 font-size: small;
@@ -33,20 +24,20 @@
                 text-align: center;
             }
             table {
-                background-color: white;
-                border: 2px solid black;
+                background-color: #fff;
+                border: 2px solid #000;
                 border-spacing: 0px;
                 text-align: center;
                 margin: 0 auto;
             }
             td {
-                border: 1px solid black;
+                border: 1px solid #000;
                 text-align: center;
                 margin: 0 auto;
                 height: 33px;
             }
             th {
-                border: 1px solid grey;
+                border: 1px solid #808080;
                 height: 40px;
                 font-size: larger;
             }
@@ -57,47 +48,66 @@
                 writing-mode: vertical-lr;
                 width: 30px;
             }
-            .help {
-                border-radius: 100%;
-                background-color: white;
-                border: 2px solid rgb(64, 64, 64);
-            }
-            .helpWindow {
-                border: 2px solid black;
-                border-radius: 10px;
-                background-color: white;
-                border-spacing: 0px;
-                text-align: center;
-                margin: -160px 0 0 -45%;
-                position: absolute;
-                display: none;
-                top: 50%;
-                left: 50%;
-                width: 90%;
-                height: 320px;
-            }
-            .mask {
-                background-color: #666666;
-                opacity: 0.5;
-                position: absolute;
-                display: none;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-            }
-            #back {
+            .tools {
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: inset 0 0 3px 3px #ddd;
+                margin-left: 2.2%;
+                margin-top: 5px;
+                padding: 5px;
                 font-size: medium;
-                margin-left: 20px;
-                background-color: #3333FF;
-                color: white;
-                border-radius: 3px;
+            }
+            .tools:hover {
+                box-shadow: inset 0 0 6px 6px #ddd;
+                animation: toolshover 0.1s;
+            }
+            @keyframes toolshover {
+                from {
+                    background-color: #fff;
+                    box-shadow: inset 0px 0px 3px 3px #ddd;
+                }
+                to {
+                    background-color: #f9f9f9;
+                    box-shadow: inset 0px 0px 6px 6px #ddd;
+                }
+            }
+            #help {
+                font-size: large;
+                margin-left: 2.2%;
+                border-radius: 50%;
+                background-color: white;
+                border: 2px solid #404040;
+            }
+            #help:hover {
+                transform: rotate(1turn);
+                transition-duration: 1s;
+            }
+            #helpWindow {
+                z-index: 150;
+                box-shadow: 3px 3px 3px 3px #ddd;
+                border-radius: 20px;
+                text-align: center;
+                margin: 40px 0 0 10%;
+                background-color: #fff;
+                position: fixed;
+                display: none;
+                width: 80%;
+                height: fit-content;
+                top: 0;
+                font-size: large;
+            }
+            #helpWindow h4, #helpWindow h5 {
+                padding: 10px;
             }
         </style>
     </head>
 
     <body>
-        <div>
+        <div id="top">
+            <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+            <div id="title"><h2>超课表3.2</h2></div>
+        </div>
+        <div class="page">
             <!-- 课表 start-->
             <table id="schedule" title="《初二年级6.13-6.17日课程安排（第18周复习周安排）》版课表">
                 <thead>
@@ -218,27 +228,26 @@
                 </tbody>
             </table>
             <!-- 课表 end -->
-            <button type="button" id="autoSwitcher" onclick="autoSwitch()" title="关闭自动入会">关闭自动入会</button>
-            <button type="button" id="autoSwitcherzixi" onclick="autoSwitchzixi()" title="自习会议特别开关">关闭自动进入自习会议</button>
-            <button type="button" id="autoSwitcherPE" onclick="autoSwitchPE()" title="体育特别开关">关闭自动进入体育会议</button>
-            <button type="button" onclick="test()" title="测试弹出窗口">测试弹出窗口</button>
-            <button type="button" id="help" class="help" onclick="help()" title="帮助">?</button>
-            <button type="button" id="back" title="返回" onclick="javascript:window.location='./index.html'">返回首页</button>
+            <button type="button" class="tools" id="autoSwitcher" onclick="autoSwitch()" title="关闭自动入会">关闭自动入会</button>
+            <button type="button" class="tools" id="autoSwitcherzixi" onclick="autoSwitchzixi()" title="自习会议特别开关">关闭自动进入自习会议</button>
+            <button type="button" class="tools" id="autoSwitcherPE" onclick="autoSwitchPE()" title="体育特别开关">关闭自动进入体育会议</button>
+            <button type="button" class="tools" onclick="test()" title="测试弹出窗口">测试弹出窗口</button>
+            <button type="button" id="help" onclick="help()" title="帮助">?</button>
         </div>
 
-        <p title="告示">6/12 [15:29]课表已调整；6/13 [8:18]数学会议号已更新；[9:38]调课已更新；[17:55]加入晚自习的入会</p>
-        <p title="notes">2022/6/7 &nbsp;&nbsp;&nbsp; version server-3.2常维护版本 &nbsp;&nbsp;&nbsp; made by C19746 &nbsp;&nbsp;&nbsp; 仅提供一九级七班课程链接 &nbsp;&nbsp;&nbsp;
-            建议使用Microsoft Edge浏览器打开</p>
-        <div id="mask" class="mask" onclick="closeHelp()"></div>
-        <div id="helpWindow" class="helpWindow" onclick="closeHelp()">
+        <div id="helpWindow" onclick="closeHelp()">
             <h4>入会方式：单击任意课程即可进入对应会议室；课前5分钟会自动进入会议室（可关闭）；</h4>
-            <h4 style="display: inline;">请允许 弹出窗口与重定向、在本站点打开链接 ，否则会无法进入会议室。</h4>
+            <h4>请允许 弹出窗口与重定向、在本站点打开链接 ，否则会无法进入会议室。</h4>
             <h4>自动进入教室是通过每分钟检查一次当前的时间实现的，故需禁止此页面进入睡眠模式，否则会无法自动入会；</h4>
-            <h4>自习/体育的特别开关 规则：当且仅当 自动进入会议、自动进入自习/体育 同时打开时，才可自动入会。</h4>
+            <h4>自习/体育的特别开关 规则：当且仅当 自动进入会议、自动进入自习/体育 同时打开时，才可自动进入自习/体育会议室。</h4>
             <h4>语文/英语的竞赛班/提高班、导师活动教室不统一，暂不支持超链接/自动入会。</h4>
             <h4>另外，若有调课、调休情况，建议关闭自动入会。</h4>
             <h5>入会时间：早自习-提前10分钟；下午第一节课-提前15分钟；晚自习：提前30分钟；其它所有课-提前5分钟；连续课程不重复入会。</h5>
         </div>
+        <div id="mask" onclick="closeHelp()"></div>
+
+        <p title="告示">6/13 [8:18]数学会议号已更新；[9:38]调课已更新；[17:55]加入晚自习的入会</p>
+        <p title="notes">2022/7/31 &nbsp;&nbsp;&nbsp; version website-3.2 &nbsp;&nbsp;&nbsp; made by C19746 &nbsp;&nbsp;&nbsp; 仅提供一九级七班课程链接 &nbsp;&nbsp;&nbsp;建议使用Microsoft Edge浏览器打开</p>
 
         <script>
             var autoJoin = true;

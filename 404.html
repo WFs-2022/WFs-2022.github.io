@@ -4,41 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 页面走丢哩</title>
+    <title>404</title>
+    <link rel="stylesheet" href="css.css">
     <style>
+        #page{
+            height: 84px;
+        }
         html {
-            background-color: #6cf;
+            animation-name: shock;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
         }
-        #container {
-            text-align: center;
-            border-spacing: 0px;
-            margin: -150px 0 0 -45%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 90%;
-            height: 300px;
-        }
-        h1 {
-            color: #FFF;
-        }
-        p {
-            color: #FFF;
-        }
-        button {
-            font-size: medium;
-            margin-left: 20px;
-            background-color: #5f5fff;
-            color: white;
-            border-radius: 3px;
+        @keyframes shock {
+            0% {
+                background-color: #fff;
+            }
+            40% {
+                background-color: #f00;
+            }
+            60% {
+                background-color: #f00;
+            }
+            100% {
+                background-color: #fff;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>404 Not found</h1>
-        <p>唔……你踏入了未知~</p>
-        <button type="button" onclick="javascript:window.location='https://wfs-2022.github.io/index.html'">回到首页</button>
+    <div id="top">
+        <button id="back" title="返回" onclick="javascript:window.location='https://wfs-2022.github.io/index.html'">◀</button>
+        <div id="title"><h2>页面不存在</h2></div>
     </div>
+    <div class="page">
+        <h1>404 Not found</h1><br>
+        <p id="para"></p>
+    </div>
+    <script>
+        window.onload=()=>{
+            var num=Math.random() * 100;
+            function changetxt(arg){
+                document.getElementById("para").innerText=arg;
+                return;
+            }
+            if(num<25) changetxt("唔……你踏入了未知~");
+            else if(num<50) changetxt("这里是一片虚无！");
+            else if(num<75) changetxt("这里什么也没有欸……");
+            else changetxt("前面的区域，以后再来探索吧！"); //不过，我不玩原神！！
+        }
+    </script>
 </body>
 </html>

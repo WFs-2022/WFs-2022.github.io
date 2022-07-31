@@ -11,14 +11,27 @@
 <body>
     <div id="top">
         <div id="title"><h2>WsF的小站</h2></div>
-        <button id="menu" title="菜单">≡</button>
+        <button id="menu" title="菜单" type="button">≡</button>
     </div>
     <div id="middle">
+        <div class="items" title="改自Github" onclick="javascript:window.location='./TodoApp.html'">
+            <picture style="position: absolute;">
+                <img class="linkicons" src="./pictures/GitHubico.png">
+            </picture>
+            <picture><img title="改自Github" class="itempicts" src="./pictures/todoapp-ico.png" /></picture>
+            <p class="itemnames">待办列表</p>
+        </div>
         <div class="items" title="来自Github" onclick="javascript:window.location='./music-unlocker/index.html'">
-            <picture><img class="itempicts" title="来自Github" src="./music-unlocker/img/icons/favicon-32x32.png" /></picture>
+            <picture style="position: absolute;">
+                <img class="linkicons" src="./pictures/GitHubico.png">
+            </picture>
+            <picture><img class="itempicts" title="来自Github" src="./music-unlocker/img/icons/android-chrome-192x192.png" /></picture>
             <p class="itemnames">音乐解锁</p>
         </div>
         <div class="items" title="来自GitHub" onclick="javascript:window.location='./m3u8-downloader-master/index.html'">
+            <picture style="position: absolute;">
+                <img class="linkicons" src="./pictures/GitHubico.png">
+            </picture>
             <picture><img class="itempicts" title="来自Github" src="./m3u8-downloader-master/M3U8-ico.png" /></picture>
             <p class="itemnames">M3U8下载器</p>
         </div>
@@ -41,10 +54,6 @@
         <div class="items" onclick="javascript:window.location='./notice.html'">
             <picture><img class="itempicts" src="./pictures/notes-ico.png" /></picture>
             <del><p class="itemnames">站长留言</p></del>
-        </div>
-        <div class="items" title="待做中" onclick="javascript:window.location='./TodoApp.html'">
-            <picture><img title="待做中" class="itempicts" src="./pictures/WsF.png" /></picture>
-            <p class="itemnames"><del>待做列表</del></p>
         </div>
     </div>
     <div id="bottom">

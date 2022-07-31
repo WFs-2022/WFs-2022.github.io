@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">    
-        <title>待做列表</title>
-        <link rel="stylesheet" href="./css.css">
-        <style>
-            html {
-                background-image: linear-gradient(to bottom, transparent, #eee);
-            }
-            #appPage {
-                width: 300px;
-                height: 400px;
-                padding: 2%;
-                margin: 30px auto;
-                border-radius: 10px;
-                background-color: #fff;
-                box-shadow: 0px 0px 3px 3px #ddd;
-            }
-            #appPage:hover {
-                animation-name: bloghover;
-                animation-duration: 0.1s;
-                background-color: #fff;
-                box-shadow: 0px 0px 6px 6px #ddd;
-            }
-            #addTxt {
-                width: 90%;
-                box-shadow: 0 0 2px 2px #ddd;
-                border-radius: 3px;
-            }
-            #addBtn {
-                aspect-ratio: 1/1;
-                background-color: #fff;
-                border-radius: 3px;
-                box-shadow: 0 0 2px 2px #ddd;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="top">
-            <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
-            <div id="title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;TodoApp</h2></div>
-        </div>
-        <div id="appPage">
-            <div>
-                <input type="text" name="addTxt" id="addTxt">
-                <input type="button" value="+" id="addBtn" title="添加项目">
-            </div>
-            <div id="todos">
-                <br>
-            </div>
-        </div>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="来自GitHub">
+  <title>待办列表</title>
+  <link rel="stylesheet" href="./todoapp.css">
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="shortcut icon" href="./pictures/todoapp-ico.png" type="image/x-icon">
+</head>
+<body>
+  <div id="top">
+      <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+      <div id="title"><h2>待办列表</h2></div>
+  </div>
+  <div class="wrapper">
+    <header>待办列表</header>
+    <div class="inputField">
+      <input type="text" placeholder="新建事项">
+      <button><i class="fas fa-plus"></i></button>
+    </div>
+    <ul class="todoList">
+      <!-- data are comes from local storage -->
+    </ul>
+    <div class="footer">
+      <span>共有 <span class="pendingTasks"></span> 个待办事项</span>
+      <button>清除所有</button>
+    </div>
+  </div>
+
+  <script src="./todoapp.js"></script>
+
+</body>
+
 </html>

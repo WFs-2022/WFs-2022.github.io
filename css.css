@@ -32,7 +32,7 @@ body {
     height: 60px;
 }
 #title {
-    margin-left: 20px;
+    margin-left: 50px;
     padding-top: 10px;
     width: fit-content;
     text-shadow: 1px 1px 3px #888;
@@ -171,7 +171,7 @@ body {
     margin: 0px;
     border-spacing: 0px;
     margin: -204.9px 0px 0px -150.9px;
-    position: absolute;
+    position: fixed;
     display: none;
     top: 50%;
     left: 50%;
@@ -181,9 +181,8 @@ body {
 #mask {
     z-index: 125;
     display: none;
-    position: absolute;
+    position: fixed;
     width: auto;
-    margin: 0;
     float: none;
     top: 0px;
     left: 0px;
@@ -215,11 +214,9 @@ body {
 }
 @keyframes bloghover {
     from {
-        background-color: #fff;
         box-shadow: 0px 0px 3px 3px #ddd;
     }
     to {
-        background-color: #fff;
         box-shadow: 0px 0px 6px 6px #ddd;
     }
 }
@@ -259,4 +256,19 @@ body {
 }
 #back:hover {
     background-color: #ccc;
+}
+.page{
+    text-align: center;
+    width: 80%;
+    padding: 2%;
+    margin: 10% auto;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 3px #ddd;
+}
+.page:hover {
+    animation-name: bloghover;
+    animation-duration: 0.1s;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 6px #ddd;
 }

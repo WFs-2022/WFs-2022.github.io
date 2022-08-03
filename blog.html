@@ -70,6 +70,8 @@
             border-radius: 10px;
             box-shadow: 3px 3px 3px 3px #ddd;
             background-color: #fff;
+            animation-name: tojumpunhover;
+            animation-duration: 0.1s;
         }
         #tojump:hover {
             opacity: 1;
@@ -85,6 +87,53 @@
                 box-shadow: 3px 3px 6px 6px #ddd;
             }
         }
+        @keyframes tojumpunhover {
+            from {
+                box-shadow: 3px 3px 6px 6px #ddd;
+            }
+            to {
+                box-shadow: 3px 3px 3px 3px #ddd;
+            }
+        }
+        #backtop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            height: 30px;
+            width: 30px;
+        }
+        #topbtn {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 2px 2px #ddd;
+            background-color: #fff;
+            animation-name: topbtnunhover;
+            animation-duration: 0.1s;
+        }
+        #topbtn:hover {
+            opacity: 1;
+            background-color: #eee;
+            box-shadow: 0px 0px 4px 4px #ddd;
+            animation-name: topbtnhover;
+            animation-duration: 0.1s;
+        }
+        @keyframes topbtnhover {
+            from {
+                box-shadow: 0px 0px 2px 2px #ddd;
+            }
+            to {
+                box-shadow: 0px 0px 4px 4px #ddd;
+            }
+        }
+        @keyframes topbtnunhover {
+            from {
+                box-shadow: 0px 0px 4px 4px #ddd;
+            }
+            to {
+                box-shadow: 0px 0px 2px 2px #ddd;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,6 +146,7 @@
             <button type="button" onclick="find()">跳转</button>
         </div>
     </div>
+    <div id="topmark"></div>
     <div id="blog">
         <!-- 
         <div class="blocks">
@@ -218,6 +268,9 @@ function atk(depth){
         </div>
     </div>
 
+    <div id="backtop">
+        <button id="topbtn">▲</button>
+    </div>
     <div id="menupage">
         <div class="menuitems"><a href="./index.html">🏰主站</a></div>
         <div class="menuitems"><a href="./blog.html">📕博客</a></div>
@@ -260,6 +313,11 @@ function atk(depth){
         function donate() {
             document.getElementById('mask').style.display='block';
             document.getElementById('donate').style.display='block';
+        }
+
+        let backtopbtn = document.getElementById("topbtn");
+        backtopbtn.onclick=()=>{
+            window.location="#topmark";
         }
         function find() {
             var inp = document.getElementById("jumper").value;

@@ -34,10 +34,13 @@ button:active {
 /* index.html */
 #top {
     z-index: 100;
-    background-color: #fff;
     margin: 0px;
+    background-color: #fff;
     box-shadow: 0px 3px 3px 3px #ddd;
+    position: fixed;
+    top: 0px;
     height: 60px;
+    width: 100%;
 }
 #title {
     margin-left: 50px;
@@ -64,7 +67,7 @@ button:active {
 }
 
 #middle {
-    margin: 50px 0 0 calc(50% - 276px);
+    margin: 80px 0 0 calc(50% - 276px);
     display: grid;
     grid-template-columns: repeat(4,120px);
     grid-template-rows: repeat(2,140px);
@@ -124,7 +127,7 @@ button:active {
 }
 @media screen and (max-width: 560px) {
     #middle {
-        margin: 50px 0 50px calc(50% - 202px);
+        margin: 80px 0 50px calc(50% - 202px);
         grid-template-columns: repeat(3,120px);
         grid-template-rows: repeat(3,140px);
         grid-gap: 24px;
@@ -135,13 +138,13 @@ button:active {
 }
 @media screen and (max-width: 430px) {
     #middle {
-        margin: 50px 0 50px calc(50% - 132px);
+        margin: 80px 0 50px calc(50% - 132px);
         grid-template-columns: repeat(2,120px);
         grid-template-rows: repeat(4,140px);
         grid-gap: 24px;
     }
 }
-@media screen and (max-height: 530px) {
+@media screen and (max-height: 500px) {
     #middle {
         margin-bottom: 15px;
     }
@@ -316,7 +319,7 @@ button:active {
     text-align: center;
     width: 80%;
     padding: 2%;
-    margin: 10% auto;
+    margin: 100px auto;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0px 0px 3px 3px #ddd;

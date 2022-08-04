@@ -7,6 +7,34 @@
     <link rel="shortcut icon" href="./pictures/WsF-smallico.png">
     <title>WsF的小站（持续开发中）</title>
     <link rel="stylesheet" href="css.css">
+    <style>
+        @media screen and (max-width: 560px) {
+            #middle {
+                margin: 80px 0 50px calc(50% - 202px);
+                grid-template-columns: repeat(3,120px);
+                grid-template-rows: repeat(3,140px);
+                grid-gap: 24px;
+            }
+            #bottom {
+                position: initial;
+            }
+        }
+        @media screen and (max-width: 430px) {
+            #middle {
+                margin: 80px 0 50px calc(50% - 132px);
+                grid-template-columns: repeat(2,120px);
+                grid-template-rows: repeat(4,140px);
+                grid-gap: 24px;
+            }
+        }
+        @media screen and (max-height: 500px) {
+            #middle {
+                margin-bottom: 15px;
+            }
+            #bottom {
+                position: initial;
+            }
+        }</style>
 </head>
 <body style="height: auto;">
     <div id="top">

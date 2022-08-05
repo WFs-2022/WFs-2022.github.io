@@ -78,6 +78,7 @@
                     menuPge.style.display="block";
                     menuPge.style.animationName="menuopen";
                     menuPge.style.height="calc(100% - 170px)";
+                    menuPge.style.minHeight="185px";
                     menuOpen = true;
                 }else {
                     menuRun = true;
@@ -87,6 +88,7 @@
                     }, 1000);
                     menuPge.style.animationName="menuclose";
                     menuPge.style.height="0px";
+                    menuPge.style.minHeight="0px";
                     menuOpen = false;
                 }
             }

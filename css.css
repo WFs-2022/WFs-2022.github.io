@@ -133,6 +133,7 @@ button:active {
     position: fixed;
     float: right;
     height: 0px;
+    min-height: 0px;
     width: 30%;
     min-width: 200px;
     background-color: #fff;
@@ -160,17 +161,21 @@ button:active {
 @keyframes menuopen {
     from {
         height: 0px;
+        min-height: 0px;
     }
     to {
         height: calc(100% - 170px);
+        min-height: 185px;
     }
 }
 @keyframes menuclose {
     from {
         height: calc(100% - 170px);
+        min-height: 185px;
     }
     to {
         height: 0px;
+        min-height: 0px;
     }
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小游戏在线玩</title>
     <link rel="shortcut icon" href="./pictures/a_lie-icon.png">
+    <link rel="stylesheet" href="./css.css">
     <style>
         img {
             margin: -35px 0 0 -72.5px;
@@ -17,8 +18,9 @@
             display: block;
         }
         video {
-            margin: 10px auto;
+            margin: 70px auto;
             width: 80%;
+            max-width: 768.6px;
             aspect-ratio: 854 / 480;
             display: none;
         }
@@ -26,7 +28,7 @@
             width: 100%;
             height: 100%;
         }
-        #mask {
+        #plmask {
             -webkit-user-select: none;
             -moz-user-seletct: none;
             user-select: none;
@@ -43,20 +45,25 @@
     </style>
 </head>
 <body>
+    <div id="top">
+        <button id="back" title="返回" onclick="javascript:window.location='./index.html'">◀</button>
+        <div id="title"><h2>小游戏在线玩</h2></div>
+    </div>
     <a href="./pvz/index.html"><video id="video">
         <source src="./resources/你被骗了.mp4" type="video/mp4">
     </video></a>
     <picture>
-        <img id="play" src="./pictures/PLAY.png" onmouseleave="javascript:document.getElementById('mask').style.display='block'" onclick="start()">
+        <img id="play" src="./pictures/PLAY.png" onmouseleave="javascript:document.getElementById('plmask').style.display='block'" onclick="start()">
     </picture>
-    <div id="mask" onmouseover="javascript:document.getElementById('mask').style.display='none'"></div>
+    <div id="plmask" onmouseover="javascript:document.getElementById('plmask').style.display='none'"></div>
 </body>
 <script>
     var video=document.getElementById("video");
     function start(){
+        document.getElementById("title").innerHTML="<h2>你被骗了</h2>";
         document.title="你被骗了";
         document.getElementById('play').style.display='none';
-        document.getElementById('mask').style.display='none';
+        document.getElementById('plmask').style.display='none';
         document.getElementById('video').style.display='block';
         video.play();
     }

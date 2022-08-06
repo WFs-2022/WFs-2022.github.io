@@ -7,13 +7,7 @@
     <title>小游戏在线玩</title>
     <link rel="shortcut icon" href="./pictures/a_lie-icon.png">
     <style>
-        html, body {
-            margin: 0;
-        }
         img {
-            -webkit-user-select: none;
-            -moz-user-seletct: none;
-            user-select: none;
             margin: -35px 0 0 -72.5px;
             position: absolute;
             top: 50%;
@@ -23,16 +17,14 @@
             display: block;
         }
         video {
-            -webkit-user-select: none;
-            -moz-user-seletct: none;
-            user-select: none;
-            margin: -135px 0 0 -180px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 270px;
-            width: 360px;
+            margin: 10px auto;
+            width: 80%;
+            aspect-ratio: 854 / 480;
             display: none;
+        }
+        source {
+            width: 100%;
+            height: 100%;
         }
         #mask {
             -webkit-user-select: none;

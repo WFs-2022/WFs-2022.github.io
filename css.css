@@ -98,8 +98,7 @@ button:active {
     animation-duration: 0.1s;
     transform: scale(1.05, 1.05);
     transition-duration: 0.1s;
-    background-color: #f9f9f9;
-    box-shadow: 6px 6px 6px 6px #ddd;
+    box-shadow: 6px 6px 6px 6px #eee;
 }
 .itempicts {
     margin: 20px 20px 10px 20px;
@@ -111,21 +110,17 @@ button:active {
 }
 @keyframes itemhover {
     from {
-        background-color: #fff;
         box-shadow: 3px 3px 3px 3px #ddd;
     }
     to {
-        background-color: #f9f9f9;
-        box-shadow: 6px 6px 6px 6px #ddd;
+        box-shadow: 6px 6px 6px 6px #eee;
     }
 }
 @keyframes itemunhover {
     from {
-        background-color: #f9f9f9;
-        box-shadow: 6px 6px 6px 6px #ddd;
+        box-shadow: 6px 6px 6px 6px #eee;
     }
     to {
-        background-color: #fff;
         box-shadow: 3px 3px 3px 3px #ddd;
     }
 }
@@ -246,19 +241,19 @@ button:active {
     transform: scale(1.01, 1.01);
     transition-duration: 0.1s;
     background-color: #fff;
-    box-shadow: 0px 0px 6px 6px #ddd;
+    box-shadow: 0px 0px 6px 6px #eee;
 }
 @keyframes bloghover {
     from {
         box-shadow: 0px 0px 3px 3px #ddd;
     }
     to {
-        box-shadow: 0px 0px 6px 6px #ddd;
+        box-shadow: 0px 0px 6px 6px #eee;
     }
 }
 @keyframes blogunhover {
     from {
-        box-shadow: 0px 0px 6px 6px #ddd;
+        box-shadow: 0px 0px 6px 6px #eee;
     }
     to {
         box-shadow: 0px 0px 3px 3px #ddd;
@@ -314,5 +309,5 @@ button:active {
     animation-name: bloghover;
     animation-duration: 0.1s;
     background-color: #fff;
-    box-shadow: 0px 0px 6px 6px #ddd;
+    box-shadow: 0px 0px 6px 6px #eee;
 }

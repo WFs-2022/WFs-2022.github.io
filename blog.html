@@ -11,14 +11,15 @@
         a, p {
             display: inline; 
         }
-    
+        a{
+            color: #333;
+        }
         input {
             width: 100px;
         }
-    
         jmplnk {
-            top: -115px;
             position: relative;
+            top: -115px;
         }
 
         pre {
@@ -34,7 +35,6 @@
             overflow-y: hidden;
             overflow-x: auto;
         }
-        
         window {
             background-color: #666666;
             font-size: x-small;
@@ -104,33 +104,36 @@
             background-color: #fff;
             animation-name: topbtnunhover;
             animation-duration: 0.1s;
+            transform: scale(1, 1);
+            transition: 0.2s;
         }
         #topbtn:hover {
             opacity: 1;
-            background-color: #eee;
-            box-shadow: 0px 0px 4px 4px #ddd;
+            box-shadow: 0px 0px 4px 4px #eee;
             animation-name: topbtnhover;
             animation-duration: 0.1s;
+            transform: scale(1.05, 1.05);
+            transition-duration: 0.1s;
         }
         @keyframes topbtnhover {
             from {
-                background-color: #fff;
                 box-shadow: 0px 0px 2px 2px #ddd;
             }
             to {
-                background-color: #eee;
-                box-shadow: 0px 0px 4px 4px #ddd;
+                box-shadow: 0px 0px 4px 4px #eee;
             }
         }
         @keyframes topbtnunhover {
             from {
-                background-color: #eee;
-                box-shadow: 0px 0px 4px 4px #ddd;
+                box-shadow: 0px 0px 4px 4px #eee;
             }
             to {
-                background-color: #fff;
                 box-shadow: 0px 0px 2px 2px #ddd;
             }
+        }
+        #topbtn:active {
+            transform: scale(0.95, 0.95);
+            transition: 0.2s;
         }
     </style>
 </head>
@@ -141,7 +144,7 @@
         <div id="tojump">
             <label for="jumper" id="label">跳转至：</label>
             <input type="date" name="jumper" id="jumper" min="2022-06-18" value="2022-06-18">
-            <button type="button" onclick="find()">跳转</button>
+            <button type="button" onclick="find()" style="border-radius: 3px;">跳转</button>
         </div>
     </div>
     <div id="topmark"></div>

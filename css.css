@@ -90,10 +90,14 @@ button:active {
     box-shadow: 3px 3px 3px 3px #ddd;
     animation-name: itemunhover;
     animation-duration: 0.1s;
+    transform: scale(1, 1);
+    transition-duration: 0.1s;
 }
 .items:hover {
     animation-name: itemhover;
     animation-duration: 0.1s;
+    transform: scale(1.05, 1.05);
+    transition-duration: 0.1s;
     background-color: #f9f9f9;
     box-shadow: 6px 6px 6px 6px #ddd;
 }
@@ -226,17 +230,21 @@ button:active {
 }
 .blocks{
     width: 80%;
-    padding: 2%;
+    padding: 20px;
     margin: 15px 0 0 3%;
     border-radius: 5px;
     animation-name: blogunhover;
     animation-duration: 0.1s;
+    transform: scale(1, 1);
+    transition-duration: 0.1s;
     background-color: #fff;
     box-shadow: 0px 0px 3px 3px #ddd;
 }
 .blocks:hover {
     animation-name: bloghover;
     animation-duration: 0.1s;
+    transform: scale(1.01, 1.01);
+    transition-duration: 0.1s;
     background-color: #fff;
     box-shadow: 0px 0px 6px 6px #ddd;
 }

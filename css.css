@@ -65,6 +65,60 @@ button:active {
 #menu:hover {
     background-color: #ddd;
 }
+#menu-top{
+    position: absolute;
+    background-color: #000;
+    border-radius: 2px;
+    top: 9px;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+}
+#menu-mid{
+    position: absolute;
+    background-color: #000;
+    border-radius: 2px;
+    top: 19px;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+}
+#menu-bot{
+    position: absolute;
+    background-color: #000;
+    border-radius: 2px;
+    top: 29px;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+}
+.mvmntp {
+    transform: rotate( 135deg)
+        translate(8px, -6px);
+    transition-duration: 0.5s;
+}
+.mvmnmd {
+    transform: scale(0)
+        rotate(360deg);
+    transition-duration: 0.5s;
+}
+.mvmnbm {
+    transform: rotate(-135deg)
+        translate(8px, 7px);
+    transition-duration: 0.5s;
+}
+.re-mvmntp{
+    transform: rotate(0deg) translate(0, 0);
+    transition-duration: 0.5s;
+}
+.re-mvmnmd{
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+.re-mvmnbm{
+    transform: rotate(0deg) translate(0, 0);
+    transition-duration: 0.5s;
+}
 
 #middle {
     margin: 80px 0 0 calc(50% - 276px);

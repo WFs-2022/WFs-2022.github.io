@@ -17,7 +17,11 @@
 <body>
     <div id="top">
         <div id="title"><h2>WsF的个人简介</h2></div>
-        <button id="menu" title="菜单" type="button">≡</button>
+        <button id="menu" title="菜单">
+            <div id="menu-top"></div>
+            <div id="menu-mid"></div>
+            <div id="menu-bot"></div>
+        </button>
     </div>
     <br><br><br>
     <div id="body">
@@ -68,6 +72,10 @@
         var menuOpen = false, menuRun = false;
         let menuBtn = document.getElementById("menu");
         let menuPge = document.getElementById("menupage");
+        var state = true;
+        let mntp = document.getElementById("menu-top");
+        let mnmd = document.getElementById("menu-mid");
+        let mnbm = document.getElementById("menu-bot");
         menuBtn.onclick=() => {
             if(!menuRun){
                 if(!menuOpen){
@@ -90,6 +98,27 @@
                     menuPge.style.height="0px";
                     menuPge.style.minHeight="0px";
                     menuOpen = false;
+                }
+                if(state){
+                    mntp.classList.add("mvmntp");
+                    mnmd.classList.add("mvmnmd");
+                    mnbm.classList.add("mvmnbm");
+                    menuBtn.title="关闭";
+                    state = false;
+                }else {
+                    mntp.classList.add("re-mvmntp");
+                    mnmd.classList.add("re-mvmnmd");
+                    mnbm.classList.add("re-mvmnbm");
+                    mntp.classList.remove("mvmntp");
+                    mnmd.classList.remove("mvmnmd");
+                    mnbm.classList.remove("mvmnbm");
+                    setTimeout(() => {
+                        mntp.classList.remove("re-mvmntp");
+                        mnmd.classList.remove("re-mvmnmd");
+                        mnbm.classList.remove("re-mvmnbm");
+                        menuBtn.title="菜单";
+                        state=true;
+                    }, 500);
                 }
             }
         }

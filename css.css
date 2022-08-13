@@ -94,18 +94,16 @@ button:active {
 }
 .mvmntp {
     transform: rotate( 135deg)
-        translate(7px, -5px);
+        translate(6px, -6px);
     transition-duration: 0.5s;
 }
 .mvmnmd {
-    transition-timing-function: linear;
-    transform: scale(0)
-        rotate(360deg);
+    transform: scaleX(0);
     transition-duration: 0.5s;
 }
 .mvmnbm {
     transform: rotate(-135deg)
-        translate(7px, 6px);
+        translate(6px, 6px);
     transition-duration: 0.5s;
 }
 .re-mvmntp{
@@ -114,9 +112,7 @@ button:active {
     transition-duration: 0.5s;
 }
 .re-mvmnmd{
-    transition-timing-function: linear;
-    transform: scale(1)
-        rotate(0deg);
+    transform: scaleX(1);
     transition-duration: 0.5s;
 }
 .re-mvmnbm{
@@ -235,6 +231,11 @@ button:active {
         height: 0px;
         min-height: 0px;
     }
+}
+#darkmod {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
 }
 
 #friends {

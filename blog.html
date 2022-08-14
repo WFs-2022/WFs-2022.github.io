@@ -281,6 +281,23 @@ function atk(depth){
         <div class="menuitems"><a href="./blog.html">📕博客</a></div>
         <div class="menuitems"><a href="./myself.html">👦个人主页</a></div>
         <div class="menuitems"><a href="javascript:donate();">💰资助</a></div>
+        <div class="menuitems"><a href="javascript:login();">
+            <picture><img src="./pictures/user.png" alt="userimg" width="25px" height="25px" style="position: relative; top: 5px; border-radius: 50%;"></picture>
+            登录
+        </a></div>
+    </div>
+    <div id="loginwindow">
+        <div id="wintitle">
+            <h2>登录</h2>
+        </div>
+        <div>
+            <p class="logintxt">用户名：</p>
+            <input type="text" placeholder="Username" name="用户名" id="usernm" autocomplete="on">
+            <p class="logintxt">密码：</p>
+            <input type="password" placeholder="Password" name="密码" id="passwd">
+            <input type="button" value="取消" id="cancel" onclick="window.close();">
+            <input type="submit" value="确认" id="submit">
+        </div>
     </div>
     <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
     <div>

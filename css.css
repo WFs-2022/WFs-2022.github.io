@@ -31,7 +31,7 @@ button:active {
     transition: 0.2s;
 }
 
-/* index.html */
+/* index.html & global */
 #top {
     z-index: 100;
     margin: 0px;
@@ -195,6 +195,7 @@ button:active {
     top: 60px;
     right: 0;
     animation-duration: 1s;
+    align-items: center;
 }
 .menuitems {
     padding: 10px;
@@ -232,11 +233,7 @@ button:active {
         min-height: 0px;
     }
 }
-#darkmod {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-}
+
 
 #friends {
     float: left;
@@ -370,4 +367,62 @@ button:active {
     animation-duration: 0.1s;
     background-color: #fff;
     box-shadow: 0px 0px 6px 6px #eee;
+}
+
+/* login */
+#loginwindow {
+    z-index: 200;
+    width: 250px;
+    height: 180px;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+    position: fixed;
+    top: calc(50% - 110px);
+    left: calc(50% - 145px);
+    padding: 20px;
+    box-shadow: 2px 2px 3px 3px #eee;
+    transform: scale(1);
+    transition-duration: 500ms;
+    display: none;
+}
+#loginwindow:hover {
+    transform: scale(1.01);
+    transition-duration: 500ms;
+    box-shadow: 2px 2px 6px 6px #eee;
+}
+#wintitle {
+    text-align: center;
+}
+.logintxt {
+    margin: 15px 0 15px 0;
+    display: inline-table;
+    padding: 0;
+    width: 80px;
+}
+#usernm, #passwd {
+    width: 150px;
+    border: 1px;
+    border-radius: 3px;
+    border-color: #000;
+    border-style: solid;
+}
+#cancel {
+    float: left;
+    margin-left: 25px;
+    font-size: 15px;
+}
+#submit {
+    float: right;
+    margin-right: 25px;
+    font-size: 15px;
+}
+#cancel, #submit {
+    height: 30px;
+    width: 50px;
+    background-color: #fff;
+    border: 2px;
+    border-radius: 5px;
+    border-color: #000;
+    border-style: solid;
 }

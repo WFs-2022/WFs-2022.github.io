@@ -1,7 +1,6 @@
-var menuOpen = false, menuRun = false;
+var menuOpen = false, menuRun = false, state = true;
 let menuBtn = document.getElementById("menu");
 let menuPge = document.getElementById("menupage");
-var state = true;
 let mntp = document.getElementById("menu-top");
 let mnmd = document.getElementById("menu-mid");
 let mnbm = document.getElementById("menu-bot");
@@ -58,4 +57,21 @@ function donate() {
 
 window.oncontextmenu=function(event){
     event.preventDefault();
+}
+
+let loginwind = document.getElementById("loginwindow");
+let logincanc = document.getElementById("cancel");
+let loginsubm = document.getElementById("submit");
+logincanc.onclick=()=>{
+    loginwind.style = "display: block; transform: scale(0); transition-duration: 500ms; transition-timing-function: ease-in-out;";
+    setTimeout(() => {
+        loginwind.style = "display: none;";
+    }, 500);
+    
+}
+loginsubm.onclick=()=>{
+    alert("然而并不能登录(～￣▽￣)～");
+}
+function login(){
+    loginwind.style = "display: block;"
 }

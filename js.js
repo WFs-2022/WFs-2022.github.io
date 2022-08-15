@@ -59,19 +59,19 @@ window.oncontextmenu=function(event){
     event.preventDefault();
 }
 
-let loginwind = document.getElementById("loginwindow");
-let logincanc = document.getElementById("cancel");
-let loginsubm = document.getElementById("submit");
+let loginwind = document.getElementById("loginwindow")
+let logincanc = document.getElementById("cancel")
+let loginsubm = document.getElementById("submit")
 logincanc.onclick=()=>{
-    loginwind.style = "display: block; transform: scale(0); transition-duration: 500ms; transition-timing-function: ease-in-out;";
+    loginwind.style = "display: block; transform: scale(0); transition-duration: 500ms; transition-timing-function: cubic-bezier(0.68, -0.55, 0, 1);"
     setTimeout(() => {
-        loginwind.style = "display: none;";
+        loginwind.style = ""
     }, 500);
     
 }
 loginsubm.onclick=()=>{
-    alert("然而并不能登录(～￣▽￣)～");
+    alert("然而并不能登录(～￣▽￣)～")
 }
 function login(){
-    loginwind.style = "display: block;"
+    loginwind.style = "transform: scale(1); transition-duration:500ms; transition-timing-function: cubic-bezier(0, 0, 0.27, 1.55);"
 }

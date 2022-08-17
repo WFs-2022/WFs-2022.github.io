@@ -62,6 +62,8 @@ window.oncontextmenu=function(event){
 let loginwind = document.getElementById("loginwindow")
 let logincanc = document.getElementById("cancel")
 let loginsubm = document.getElementById("submit")
+let loginuser = document.getElementById("usernm")
+let loginpswd = document.getElementById("passwd")
 logincanc.onclick=()=>{
     loginwind.style = "display: block; transform: scale(0); transition-duration: 500ms; transition-timing-function: cubic-bezier(0.68, -0.55, 0, 1);"
     setTimeout(() => {
@@ -70,7 +72,11 @@ logincanc.onclick=()=>{
     
 }
 loginsubm.onclick=()=>{
-    alert("然而并不能登录(～￣▽￣)～")
+    if(loginuser.value == "WsF"/**/ && /**/window.btoa(window.btoa(window.btoa(loginpswd.value))+'HelloWorld')/**/==/**/"Vm5veFIwdHVUUzlNVTBaQlNYbFJiRmhwV1hGTFEyczlIZWxsb1dvcmxk"){
+        alert("登录成功！");alert("\u3002\u3002"+/*???*/"\u4e86\u5417\uff1f");alert("\u6162\u7740"+/*Xxx Xxx Xxxx+*/"\uff0c\u6ca1\u6709\u540e"/*+0*/+"\u7aef\u600e\u4e48\u53ef"+/*😜*/"\u80fd\u80fd\u767b\u5f55\u554a\u0028\uff5e"+/*-+-+*/"\uffe3\u25bd"+/*++--*/"\uffe3\u0029\uff5e");
+    }else{
+        alert("用户名或密码错误！")
+    }
 }
 function login(){
     loginwind.style = "transform: scale(1); transition-duration:500ms; transition-timing-function: cubic-bezier(0, 0, 0.27, 1.55);"

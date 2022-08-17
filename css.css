@@ -391,19 +391,24 @@ button:active {
 }
 #wintitle {
     text-align: center;
-}
-.logintxt {
-    margin: 15px 0 10px 0;
-    display: inline-table;
-    padding: 0;
-    width: 80px;
+    margin-bottom: 10px
 }
 #usernm, #passwd {
-    width: 150px;
-    border: 1px;
-    border-radius: 3px;
-    border-color: #000;
+    outline: none;
+    margin: 0 0 10px 5%;
+    width: 90%;
+    height: 30px;
+    border-bottom: 3px;
+    border-color: #555;
     border-style: solid;
+    background-color: transparent;
+    font-size: medium;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+#usernm:focus, #passwd:focus {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
 }
 #cancel {
     float: left;
@@ -416,7 +421,7 @@ button:active {
 #cancel, #submit {
     margin-top: 20px;
     height: 30px;
-    width: 50px;
+    width: 48.5px;
     background-color: #fff;
     border: 2px;
     border-radius: 5px;

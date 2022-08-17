@@ -60,6 +60,7 @@ window.oncontextmenu=function(event){
 }
 
 let loginwind = document.getElementById("loginwindow")
+let loginwintitle = document.getElementById("wintitle")
 let logincanc = document.getElementById("cancel")
 let loginsubm = document.getElementById("submit")
 let loginuser = document.getElementById("usernm")
@@ -80,4 +81,17 @@ loginsubm.onclick=()=>{
 }
 function login(){
     loginwind.style = "transform: scale(1); transition-duration:500ms; transition-timing-function: cubic-bezier(0, 0, 0.27, 1.55);"
+}
+loginwintitle.onmousedown = function (ev) {
+    let e = ev || event;
+    let x = e.clientX - loginwind.offsetLeft; //鼠标点击坐标距离盒子左边缘的距离
+    let y = e.clientY - loginwind.offsetTop; //鼠标点击坐标距离盒子上边缘的距离
+    document.onmousemove = function (ev) {
+        loginwind.style.left = ev.clientX - x + 'px';
+        loginwind.style.top = ev.clientY - y + 'px';
+        document.onmouseup = ()=>{
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
 }

@@ -161,6 +161,28 @@
         </div> -->
         
         <div class="blocks">
+            <jmplnk id="2022-08-17"></jmplnk>
+            <h2>2022/8/17</h2>
+            <p>登录框加了个拖动效果，挺好用的~</p><br>
+            <a href="https://www.jb51.net/article/202249.htm">🔗原文链接</a>
+            <pre><window> 🔴 🟠 🟢 </window>
+let loginwintitle = document.getElementById("wintitle") //改为自己的元素即可
+loginwintitle.onmousedown = function (ev) {
+    let e = ev || event;
+    let x = e.clientX - loginwind.offsetLeft; //鼠标点击坐标距离盒子左边缘的距离
+    let y = e.clientY - loginwind.offsetTop; //鼠标点击坐标距离盒子上边缘的距离
+    document.onmousemove = function (ev) {
+        loginwind.style.left = ev.clientX - x + 'px';
+        loginwind.style.top = ev.clientY - y + 'px';
+        document.onmouseup = ()=>{
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+} //删了一点原文的东西，但我这里删了运行更好
+</pre>
+        </div>
+        <div class="blocks">
             <jmplnk id="2022-07-28"></jmplnk>
             <h2>2022/7/28</h2>
             <p>基本重写完了主站和博客的代码~接下来是一些小应用的风格统一了~</p>
@@ -290,12 +312,12 @@ function atk(depth){
         <div id="wintitle">
             <h2>登录</h2>
         </div>
-        <div>
+        <form>
             <input type="text" placeholder="用户名" name="用户名" id="usernm" autocomplete="on">
             <input type="password" placeholder="密码" name="密码" id="passwd">
             <input type="button" value="取消" id="cancel" onclick="window.close();">
             <input type="submit" value="确认" id="submit">
-        </div>
+        </form>
     </div>
     <div id="mask" onclick="javascript:document.getElementById('mask').style.display='none';document.getElementById('donate').style.display='none';"></div>
     <div>

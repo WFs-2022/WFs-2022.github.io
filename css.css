@@ -383,11 +383,11 @@ button:active {
     top: calc(50% - 110px);
     left: calc(50% - 145px);
     padding: 20px;
-    box-shadow: 2px 2px 3px 3px #eee;
+    box-shadow: 0px 0px 3px 3px #eee;
     transform: scale(0);
 }
 #loginwindow:hover {
-    box-shadow: 2px 2px 6px 6px #eee;
+    box-shadow: 0px 0px 6px 6px #eee;
 }
 #wintitle {
     text-align: center;

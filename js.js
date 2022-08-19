@@ -1,3 +1,19 @@
+var mode = false;
+window.onload=()=>{
+    var arr1 = document.cookie.split(';');
+    for(var i = 0; i < arr1.length; i++){
+        var arr2 = arr1[i].split('=');
+        if(arr2[0] == 'mode'){
+            mode=arr2[1];
+        }
+    }
+    if(mode==true){
+        moon.click();
+    }else {
+        sun.click();
+    }
+}
+
 var menuOpen = false, menuRun = false, state = true;
 let menuBtn = document.getElementById("menu");
 let menuPge = document.getElementById("menupage");
@@ -94,4 +110,48 @@ loginwintitle.onmousedown = function (ev) {
             document.onmouseup = null;
         }
     }
+}
+
+let sun = document.getElementById("sun");
+let sunlights = document.getElementsByClassName("sunlight");
+let moon = document.getElementById("moon");
+let moonlights = document.getElementsByClassName("moonlight");
+let colorshower = document.getElementById("colortxt");
+sun.onclick=()=>{
+    colorshower.innerText="日间模式"
+    moon.style.opacity="0.3";
+    sun.style.opacity="1";
+    for (let index = 0; index < 12; index++) {
+        const element = sunlights[index];
+        element.classList.add("sunlightact");
+        setTimeout(() => {
+            element.classList.remove("sunlightact");
+    document.querySelector('link[href="css.css"]').disabled=false;
+    document.querySelector('link[href="dark.css"]').disabled=true;
+        }, 1000);
+    }
+    mode = false;
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    document.cookie="mode="+false+"; expires="+oDate.toGMTString();
+}
+moon.onclick=()=>{
+    colorshower.innerText="夜间模式"
+    moon.style.opacity="1";
+    sun.style.opacity="0.3";
+    moon.classList.add("moonrot")
+    for (let index = 0; index < 12; index++) {
+        const element = moonlights[index];
+        element.classList.add("moonlightact");
+        setTimeout(() => {
+            element.classList.remove("moonlightact");
+            moon.classList.remove("moonrot")
+    document.querySelector('link[href="css.css"]').disabled=true;
+    document.querySelector('link[href="dark.css"]').disabled=false;
+        }, 1000);
+    }
+    mode = true;
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    document.cookie="mode="+true+"; expires="+oDate.toGMTString();
 }

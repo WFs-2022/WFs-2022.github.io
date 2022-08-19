@@ -6,6 +6,8 @@
     -webkit-user-select: none;
     -webkit-user-drag: none;
     scroll-behavior: smooth;
+    background-color: #333;
+    color: #fff;
 }
 body {
     height: 100vh;
@@ -37,18 +39,19 @@ button:active {
 #top {
     z-index: 100;
     margin: 0px;
-    background-color: #fff;
-    box-shadow: 0px 3px 3px 3px #ddd;
+    box-shadow: 0px 3px 3px 3px #000;
     position: fixed;
     top: 0px;
     height: 60px;
     width: 100%;
+    background-color: #333;
+    color: #fff;
 }
 #title {
     margin-left: 50px;
     padding-top: 10px;
     width: fit-content;
-    text-shadow: 1px 1px 2px #aaa;
+    text-shadow: 1px 1px 2px #888;
 }
 #title h2 {
     width: 200px;
@@ -63,9 +66,10 @@ button:active {
     height: 40px;
     border-radius: 5px;
     font-size: x-large;
+    background-color: #ccc;
 }
 #menu:hover {
-    background-color: #ddd;
+    background-color: #bbb;
 }
 #menu-top{
     position: absolute;
@@ -124,6 +128,7 @@ button:active {
 }
 #color {
     margin: 20px 0 0 20px;
+    background-color: #333;
 }
 #normcol, #darkcol {
     width: 15px;
@@ -156,7 +161,7 @@ button:active {
     transition-duration: 0.5s;
 }
 #moon {
-    background-color: #fff;
+    background-color: #333;
     width: 20px;
     height: 20px;
     border-radius: 10px;
@@ -208,8 +213,7 @@ button:active {
     width:  120px;
     height: 140px;
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 3px 3px 3px 3px #ddd;
+    box-shadow: 3px 3px 3px 3px #000;
     animation-name: itemunhover;
     animation-duration: 0.1s;
     transform: scale(1, 1);
@@ -220,7 +224,7 @@ button:active {
     animation-duration: 0.1s;
     transform: scale(1.05, 1.05);
     transition-duration: 0.1s;
-    box-shadow: 6px 6px 6px 6px #eee;
+    box-shadow: 6px 6px 6px 6px #111;
 }
 .itempicts {
     margin: 20px 20px 10px 20px;
@@ -232,18 +236,18 @@ button:active {
 }
 @keyframes itemhover {
     from {
-        box-shadow: 3px 3px 3px 3px #ddd;
+        box-shadow: 3px 3px 3px 3px #000;
     }
     to {
-        box-shadow: 6px 6px 6px 6px #eee;
+        box-shadow: 6px 6px 6px 6px #111;
     }
 }
 @keyframes itemunhover {
     from {
-        box-shadow: 6px 6px 6px 6px #eee;
+        box-shadow: 6px 6px 6px 6px #111;
     }
     to {
-        box-shadow: 3px 3px 3px 3px #ddd;
+        box-shadow: 3px 3px 3px 3px #000;
     }
 }
 
@@ -257,8 +261,8 @@ button:active {
     min-height: 0px;
     width: 30%;
     min-width: 200px;
-    background-color: #fff;
-    box-shadow: 3px 3px 3px 3px #ddd;
+    background-color: #222;
+    box-shadow: 3px 3px 3px 3px #000;
     top: 60px;
     right: 0;
     animation-duration: 1s;
@@ -266,19 +270,20 @@ button:active {
 }
 .menuitems {
     padding: 10px;
-    box-shadow: 3px 3px 3px 3px #ddd;
+    box-shadow: 3px 3px 3px 3px #000;
 }
 .menuitems a{
     text-decoration: none;
     font-size: larger;
-    color: #000;
+    background-color: transparent;
+    color: #fff;
     max-height: 20px;
 }
 .menuitems:hover {
     animation-name: itemhover;
     animation-duration: 0.1s;
-    background-color: #f9f9f9;
-    box-shadow: 6px 6px 6px 6px #ddd;
+    background-color: #444;
+    box-shadow: 6px 6px 6px 6px #111;
 }
 @keyframes menuopen {
     from {
@@ -303,13 +308,18 @@ button:active {
 
 
 #friends {
+    background-color: #222;
     float: left;
     margin: 20px 0 20px 10px;
+}
+#bottom p, #bottom del {
+    background-color: #222;
 }
 #bottom a {
     color: #ddd;
 }
 #refer {
+    background-color: #222;
     float: right;
     bottom: 0px;
     margin: 20px 10px 20px 0;
@@ -356,36 +366,82 @@ button:active {
     animation-duration: 0.1s;
     transform: scale(1, 1);
     transition-duration: 0.1s;
-    background-color: #fff;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    background-color: #333;
+    box-shadow: 0px 0px 3px 3px #000;
 }
 .blocks:hover {
     animation-name: bloghover;
     animation-duration: 0.1s;
     transform: scale(1.01, 1.01);
     transition-duration: 0.1s;
-    background-color: #fff;
-    box-shadow: 0px 0px 6px 6px #eee;
+    background-color: #333;
+    box-shadow: 0px 0px 6px 6px #111;
 }
 @keyframes bloghover {
     from {
-        box-shadow: 0px 0px 3px 3px #ddd;
+        box-shadow: 0px 0px 3px 3px #000;
     }
     to {
-        box-shadow: 0px 0px 6px 6px #eee;
+        box-shadow: 0px 0px 6px 6px #111;
     }
 }
 @keyframes blogunhover {
     from {
-        box-shadow: 0px 0px 6px 6px #eee;
+        box-shadow: 0px 0px 6px 6px #111;
     }
     to {
-        box-shadow: 0px 0px 3px 3px #ddd;
+        box-shadow: 0px 0px 3px 3px #000;
     }
 }
 .blocks h2 {
     margin: 0 0 5px -1%;
-    text-shadow: 2px 2px 2px #ccc;
+    text-shadow: 2px 2px 2px #888;
+}
+#tojump {
+    box-shadow: 3px 3px 3px 3px #000;
+    background-color: #333;
+}
+#tojump:hover {
+    box-shadow: 3px 3px 6px 6px #111;
+}
+@keyframes tojumphover {
+    from {
+        box-shadow: 3px 3px 3px 3px #000;
+    }
+    to {
+        box-shadow: 3px 3px 6px 6px #111;
+    }
+}
+@keyframes tojumpunhover {
+    from {
+        box-shadow: 3px 3px 6px 6px #111;
+    }
+    to {
+        box-shadow: 3px 3px 3px 3px #000;
+    }
+}
+#topbtn {
+    box-shadow: 0px 0px 2px 2px #000;
+    background-color: #333;
+}
+#topbtn:hover {
+    box-shadow: 0px 0px 4px 4px #111;
+}
+@keyframes topbtnhover {
+    from {
+        box-shadow: 0px 0px 2px 2px #000;
+    }
+    to {
+        box-shadow: 0px 0px 4px 4px #111;
+    }
+}
+@keyframes topbtnunhover {
+    from {
+        box-shadow: 0px 0px 4px 4px #111;
+    }
+    to {
+        box-shadow: 0px 0px 2px 2px #000;
+    }
 }
 
 /* myself.html */
@@ -411,11 +467,10 @@ button:active {
     left: 0;
     border-radius: 5px;
     font-size: x-large;
-    background-color: #bbb;
-    color: white;
+    background-color: #333;
     width: 40px;
     height: 60px;
-    box-shadow: 0px 3px 3px 3px #ddd;
+    box-shadow: 0px 3px 3px 3px #111;
 }
 #back:hover {
     background-color: #ccc;
@@ -426,14 +481,14 @@ button:active {
     padding: 2%;
     margin: 100px auto;
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0px 0px 3px 3px #ddd;
+    background-color: #333;
+    box-shadow: 0px 0px 3px 3px #000;
 }
 .page:hover {
     animation-name: bloghover;
     animation-duration: 0.1s;
-    background-color: #fff;
-    box-shadow: 0px 0px 6px 6px #eee;
+    background-color: #333;
+    box-shadow: 0px 0px 6px 6px #111;
 }
 
 /* login */
@@ -443,16 +498,16 @@ button:active {
     height: 180px;
     align-items: center;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #333;
     position: fixed;
     top: calc(50% - 110px);
     left: calc(50% - 145px);
     padding: 20px;
-    box-shadow: 0px 0px 3px 3px #eee;
+    box-shadow: 0px 0px 3px 3px #000;
     transform: scale(0);
 }
 #loginwindow:hover {
-    box-shadow: 0px 0px 6px 6px #eee;
+    box-shadow: 0px 0px 6px 6px #111;
 }
 #wintitle {
     text-align: center;
@@ -489,7 +544,8 @@ button:active {
     margin-top: 20px;
     height: 30px;
     width: 48.5px;
-    background-color: #fff;
+    background-color: #333;
+    color: #eee;
     border: 2px;
     border-radius: 5px;
     border-color: #000;

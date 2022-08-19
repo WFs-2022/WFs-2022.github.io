@@ -1,4 +1,4 @@
-var mode = false;
+var mode;
 window.onload=()=>{
     var arr1 = document.cookie.split(';');
     for(var i = 0; i < arr1.length; i++){
@@ -118,6 +118,10 @@ let moon = document.getElementById("moon");
 let moonlights = document.getElementsByClassName("moonlight");
 let colorshower = document.getElementById("colortxt");
 sun.onclick=()=>{
+    mode = false;
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    document.cookie="mode="+false+"; expires="+oDate.toGMTString();
     colorshower.innerText="日间模式"
     moon.style.opacity="0.3";
     sun.style.opacity="1";
@@ -130,12 +134,12 @@ sun.onclick=()=>{
     document.querySelector('link[href="dark.css"]').disabled=true;
         }, 1000);
     }
-    mode = false;
-    var oDate = new Date();
-    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
-    document.cookie="mode="+false+"; expires="+oDate.toGMTString();
 }
 moon.onclick=()=>{
+    mode = true;
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    document.cookie="mode="+true+"; expires="+oDate.toGMTString();
     colorshower.innerText="夜间模式"
     moon.style.opacity="1";
     sun.style.opacity="0.3";
@@ -150,8 +154,4 @@ moon.onclick=()=>{
     document.querySelector('link[href="dark.css"]').disabled=false;
         }, 1000);
     }
-    mode = true;
-    var oDate = new Date();
-    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
-    document.cookie="mode="+true+"; expires="+oDate.toGMTString();
 }

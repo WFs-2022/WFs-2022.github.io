@@ -1,16 +1,17 @@
 var mode;
 window.onload=()=>{
-    var arr1 = document.cookie.split(';');
+    var arr1 = document.cookie.split('; ');
     for(var i = 0; i < arr1.length; i++){
         var arr2 = arr1[i].split('=');
         if(arr2[0] == 'mode'){
             mode=arr2[1];
         }
     }
-    if(mode==true){
-        moon.click();
-    }else {
-        sun.click();
+    if(mode=="true"){
+        document.querySelector('link[href="dark.css"]').disabled=true;
+        document.querySelector('link[href="dark.css"]').disabled=false;
+        document.querySelector('link[href="css.css"]').disabled=true;
+        colorshower.innerText="夜间模式"
     }
 }
 
@@ -130,8 +131,8 @@ sun.onclick=()=>{
         element.classList.add("sunlightact");
         setTimeout(() => {
             element.classList.remove("sunlightact");
-    document.querySelector('link[href="css.css"]').disabled=false;
-    document.querySelector('link[href="dark.css"]').disabled=true;
+            document.querySelector('link[href="css.css"]').disabled=false;
+            document.querySelector('link[href="dark.css"]').disabled=true;
         }, 1000);
     }
 }
@@ -150,8 +151,9 @@ moon.onclick=()=>{
         setTimeout(() => {
             element.classList.remove("moonlightact");
             moon.classList.remove("moonrot")
-    document.querySelector('link[href="css.css"]').disabled=true;
-    document.querySelector('link[href="dark.css"]').disabled=false;
+            document.querySelector('link[href="dark.css"]').disabled=true;
+            document.querySelector('link[href="dark.css"]').disabled=false;
+            document.querySelector('link[href="css.css"]').disabled=true;
         }, 1000);
     }
 }

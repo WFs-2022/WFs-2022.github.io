@@ -387,6 +387,80 @@ button:active {
     margin: 0 0 5px -1%;
     text-shadow: 2px 2px 2px #ccc;
 }
+.blocks a {
+    color: #333;
+}
+#topbtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: large;
+    text-align: center;
+    box-shadow: 0px 0px 2px 2px #ddd;
+    background-color: #fff;
+    animation-name: topbtnunhover;
+    animation-duration: 0.1s;
+    transform: scale(1, 1);
+    transition: 0.2s;
+}
+#topbtn:hover {
+    opacity: 1;
+    box-shadow: 0px 0px 4px 4px #eee;
+    animation-name: topbtnhover;
+    animation-duration: 0.1s;
+    transform: scale(1.05, 1.05);
+    transition-duration: 0.1s;
+}
+@keyframes topbtnhover {
+    from {
+        box-shadow: 0px 0px 2px 2px #ddd;
+    }
+    to {
+        box-shadow: 0px 0px 4px 4px #eee;
+    }
+}
+@keyframes topbtnunhover {
+    from {
+        box-shadow: 0px 0px 4px 4px #eee;
+    }
+    to {
+        box-shadow: 0px 0px 2px 2px #ddd;
+    }
+}
+#tojump {
+    opacity: 0.5;
+    position: absolute;
+    right: 5px;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px #ddd;
+    background-color: #fff;
+    animation-name: tojumpunhover;
+    animation-duration: 0.1s;
+}
+#tojump:hover {
+    opacity: 1;
+    box-shadow: 3px 3px 6px 6px #ddd;
+    animation-name: tojumphover;
+    animation-duration: 0.1s;
+}
+@keyframes tojumphover {
+    from {
+        box-shadow: 3px 3px 3px 3px #ddd;
+    }
+    to {
+        box-shadow: 3px 3px 6px 6px #ddd;
+    }
+}
+@keyframes tojumpunhover {
+    from {
+        box-shadow: 3px 3px 6px 6px #ddd;
+    }
+    to {
+        box-shadow: 3px 3px 3px 3px #ddd;
+    }
+}
 
 /* myself.html */
 .linkicons {

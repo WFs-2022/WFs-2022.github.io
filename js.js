@@ -12,7 +12,8 @@ window.onload=()=>{
         document.querySelector('link[href="dark.css"]').disabled=false;
         document.querySelector('link[href="css.css"]').disabled=true;
         colorshower.innerText="夜间模式"
-    }
+        sun.style.opacity="0.3";
+    }else moon.style.opacity="0.3";
 }
 
 var menuOpen = false, menuRun = false, state = true;

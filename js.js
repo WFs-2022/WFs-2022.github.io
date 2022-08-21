@@ -122,7 +122,7 @@ let colorshower = document.getElementById("colortxt");
 sun.onclick=()=>{
     mode = false;
     var oDate = new Date();
-    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    oDate.setDate(oDate.getDate()+365);//访问页面后的365天过期
     document.cookie="mode="+false+"; expires="+oDate.toGMTString();
     colorshower.innerText="日间模式"
     moon.style.opacity="0.3";
@@ -140,7 +140,7 @@ sun.onclick=()=>{
 moon.onclick=()=>{
     mode = true;
     var oDate = new Date();
-    oDate.setDate(oDate.getDate()+30);//访问页面后的30天过期
+    oDate.setDate(oDate.getDate()+365);//访问页面后的365天过期
     document.cookie="mode="+true+"; expires="+oDate.toGMTString();
     colorshower.innerText="夜间模式"
     moon.style.opacity="1";

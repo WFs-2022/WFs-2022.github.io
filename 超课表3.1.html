@@ -4,11 +4,12 @@
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
         <title>超课表 Hyper Schedule</title>
         <link rel="shortcut icon" href="./pictures/HyperSchedule-ico.png">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="css.css" title="Normal Mode">
+        <link rel="stylesheet alternate" href="dark.css" title="Dark Mode">
         <style>
             a {
                 text-decoration: none;
-                color: blue;
+                color: #00f;
             }
             .page {
                 margin: 75px auto;
@@ -37,7 +38,7 @@
                 height: 33px;
             }
             th {
-                border: 1px solid #808080;
+                border: 1px solid #000;
                 height: 40px;
                 font-size: larger;
             }
@@ -88,16 +89,16 @@
             }
             #helpWindow {
                 z-index: 150;
-                box-shadow: 3px 3px 3px 3px #ddd;
                 border-radius: 20px;
                 text-align: center;
-                margin: 40px 0 0 10%;
                 background-color: #fff;
                 position: fixed;
                 display: none;
                 width: 80%;
                 height: fit-content;
-                top: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 font-size: large;
             }
             #helpWindow h4, #helpWindow h5 {
@@ -226,7 +227,7 @@
                         <td class="time" title="晚">晚</td>
                         <td title="晚自习"></td>
                         <td title="时间">18:30-20:45</td>
-                        <td colspan="4" title="晚自习"><a style="color: blue" href="javascript:open(evening)">6/15晚自习</a></td>
+                        <td colspan="4" title="晚自习"><a href="javascript:open(evening)">6/15晚自习</a></td>
                         <td title="（空）"></td>
                     </tr>
                 </tbody>
@@ -239,7 +240,7 @@
             <button type="button" id="help" onclick="help()" title="帮助">?</button>
         </div>
 
-        <div id="helpWindow" onclick="closeHelp()">
+        <div id="helpWindow" class="page" onclick="closeHelp()">
             <h4>入会方式：单击任意课程即可进入对应会议室；课前5分钟会自动进入会议室（可关闭）；</h4>
             <h4>请允许 弹出窗口与重定向、在本站点打开链接 ，否则会无法进入会议室。</h4>
             <h4>自动进入教室是通过每分钟检查一次当前的时间实现的，故需禁止此页面进入睡眠模式，否则会无法自动入会；</h4>
@@ -391,11 +392,13 @@
                 check();
             }, 59500);
         </script>
+        <script src="js.js"></script>
 
         <!-- 更新日志：1.1：可以直接进入会议室；1.2：更换为ANSI编码，在iOS备忘录中可以正常打开；   -->
         <!--          2.0：改为将课程会议室链接嵌入课表中；2.1：优化了一些细节；2.2：加入日期提示。 -->
         <!--          3.0（2.3）：可以提前五分钟自动入会，并优化了许多细节，修正了错误的体育会议链接 -->
         <!--          3.1：调整框架，方便调整课程 -->
         <!--          server-3.2：加入站长手动更新的晚自习直接入会通道、自动入会 -->
+        <!--          server-3.3：适配网站夜间模式。 -->
     </body>
 </html>

@@ -1,0 +1,75 @@
+html {
+    border: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background: url("https://api.dujin.org/bing/1920.php") no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+#title {
+    align-self: center;
+    margin: 10% 0 20px 0;
+    font-size: xx-large;
+    color: #ddd;
+}
+
+#search {
+    align-self: center;
+    width: 40%;
+}
+#srchBox {
+    outline: none;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #ddd;
+    opacity: 0.3;
+    height: 40px;
+    width: 100%;
+    font-size: medium;
+    text-align: center;
+}
+#srchBox::placeholder {
+    font-size: medium;
+    text-align: center;
+}
+.srchBoxlosfoc {
+    animation: srchbxlosfoc;
+    animation-duration: 0.3s;
+}
+#srchBox:focus {
+    box-shadow: 0 0 3px 3px #ddd;
+    opacity: 0.8;
+    animation: srchbxfoc 200ms;
+    margin-left: -50%;
+    width: 200%;
+}
+@keyframes srchbxfoc {
+    from {
+        opacity: 0.3;
+        box-shadow: 0 0 0 0 #ddd;
+        margin-left: 0px;
+        width: 100%;
+    }to {
+        opacity: 0.8;
+        box-shadow: 0 0 3px 3px #ddd;
+        margin-left: -50%;
+        width: 200%;
+    }
+}
+@keyframes srchbxlosfoc {
+    from {
+        opacity: 0.8;
+        box-shadow: 0 0 3px 3px #ddd;
+        margin-left: -50%;
+        width: 200%;
+    }to {
+        opacity: 0.3;
+        box-shadow: 0 0 0 0 #ddd;
+        margin-left: 0px;
+        width: 100%;
+    }
+}

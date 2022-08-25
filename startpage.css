@@ -3,11 +3,54 @@ html {
     margin: 0;
 }
 body {
+    border: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     background: url("https://api.dujin.org/bing/1920.php") no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes backblur {
+    from{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(0);
+    }
+    to{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(5px);
+    }
+}
+@keyframes debackblur {
+    from{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(5px);
+    }
+    to{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(0);
+    }
 }
 
 #title {
@@ -53,10 +96,6 @@ body {
     font-size: medium;
     text-align: center;
 }
-#srchBox::placeholder {
-    font-size: medium;
-    text-align: center;
-}
 .srchBoxlosfoc {
     animation: srchbxlosfoc;
     animation-duration: 0.3s;
@@ -68,10 +107,17 @@ body {
     margin-left: -50%;
     width: 200%;
 }
-#srchBox::before {
+/* #srchBox::before {
     content: url("https://www.baidu.com/favicon.ico");
     width: 30px;
     height: 30px;
+} */
+#srchBox::placeholder {
+    font-size: medium;
+    text-align: center;
+}
+#srchBox:focus::placeholder {
+    color: transparent;
 }
 @keyframes srchbxfoc {
     from {

@@ -19,3 +19,22 @@ document.onkeydown=function(event){
         else window.location=(searchEngines[0]+srchBox.value);
     }
 };
+
+let timeshow = document.getElementById("time")
+let dateshow = document.getElementById("date")
+function showTime(){
+    var day = new Date();
+    var hour = day.getHours();
+    var minut = day.getMinutes().toString();
+    var secon = day.getSeconds().toString();
+    var year = day.getFullYear();
+    var month = day.getMonth();
+    var date = day.getDate();
+    if(minut.length==1) minut="0"+minut;
+    if(secon.length==1) secon="0"+secon;
+    timeshow.innerText = hour+":"+minut+":"+secon;
+    dateshow.innerText = year+"年"+month+"月"+date+"日";
+}
+window.onload=()=>{
+    showTime();setInterval(()=>{showTime()},500);
+}

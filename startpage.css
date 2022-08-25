@@ -14,7 +14,28 @@ body {
     align-self: center;
     margin: 10% 0 20px 0;
     font-size: xx-large;
+    text-align: center;
     color: #ddd;
+}
+#time {
+    font-size: xx-large;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    margin-bottom: 0;
+}
+#time:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+#date {
+    font-size: small;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    margin-top: 10px;
+}
+#date:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
 }
 
 #search {
@@ -46,6 +67,11 @@ body {
     animation: srchbxfoc 200ms;
     margin-left: -50%;
     width: 200%;
+}
+#srchBox::before {
+    content: url("https://www.baidu.com/favicon.ico");
+    width: 30px;
+    height: 30px;
 }
 @keyframes srchbxfoc {
     from {

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 800 688" xmlns="http://www.w3.org/2000/svg">
+    <path d="M360 360 L800 200 100 200 360 360 540 580 800 200 M360 360 L360 500 420 460"
+        fill="#55f" stroke="#222" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"></path>
+    <style>
+        @media (prefers-color-scheme: dark)  {
+            path {
+                stroke: white;
+            }
+        }
+    </style>
+</svg>

@@ -15,40 +15,25 @@ body {
     -webkit-user-select: none;
     animation-fill-mode: forwards;
     animation-duration: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 @keyframes backblur {
     from{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         backdrop-filter: blur(0);
     }
     to{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         backdrop-filter: blur(5px);
     }
 }
 @keyframes debackblur {
     from{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         backdrop-filter: blur(5px);
     }
     to{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         backdrop-filter: blur(0);
     }
 }
@@ -67,7 +52,7 @@ body {
     margin-bottom: 0;
 }
 #time:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition-duration: 0.5s;
 }
 #date {
@@ -77,7 +62,7 @@ body {
     margin-top: 10px;
 }
 #date:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition-duration: 0.5s;
 }
 
@@ -144,4 +129,82 @@ body {
         margin-left: 0px;
         width: 100%;
     }
+}
+
+#setting {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    transform: rotate(0);
+    transition-duration: 1s;
+}
+#setting:hover {
+    transform: rotate(120deg);
+    transition-duration: 1s;
+}
+#settingpage {
+    z-index: 100;
+    position: absolute;
+    top: 36px;
+    right: 10px;
+    width: 40%;
+    height: 0;
+    max-width: 300px;
+    min-width: 200px;
+    border-radius: 20px;
+    background-color: #dddd;
+    overflow: hidden;
+}
+@keyframes setpageact {
+    from{
+        height: 0;
+    }to{
+        height: 80%;
+    }
+}
+@keyframes setpagecls {
+    from{
+        height: 80%;
+    }to{
+        height: 0;
+    }
+}
+.setitems {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    height: 20px;
+    width: calc(100% - 60px);
+}
+.setitems:hover {
+    background-color: #eeed;
+}
+#settingpage a {
+    color: #222;
+    text-decoration: none;
+}
+
+#about {
+    z-index: 150;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 20px;
+    background-color: #eee;
+}
+#aboutcloser {
+    width: 40px;
+    height: 40px;
+    float: right;
+    transform: rotate(0);
+    transition-duration: 0.5s;
+}
+#aboutcloser:hover {
+    transform: rotate(180deg);
+    transition-duration: 0.5s;
 }

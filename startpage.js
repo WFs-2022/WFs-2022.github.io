@@ -136,19 +136,14 @@ function saveSearchEngine(){
     setclearInputAfterS=document.getElementById("clearInput").selectedIndex
     setfocusInput=document.getElementById("focusInput").selectedIndex
     if(searchEngine!=setsearchEngine){
-        alert("已保存")
         searchEngine=setsearchEngine
     }if(setsearchInPage!=searchInPage){
-        alert("已保存")
         searchInPage=setsearchInPage
     }if(setclearInputAfterS!=clearInputAfterSearch){
-        alert("已保存")
         clearInputAfterSearch=setclearInputAfterS
     }if(setclearInputAfterS!=clearInputAfterSearch){
-        alert("已保存")
         clearInputAfterSearch=setclearInputAfterS
     }if(setfocusInput!=focusInput){
-        alert("已保存")
         focusInput=setfocusInput
     }
     var oDate = new Date();

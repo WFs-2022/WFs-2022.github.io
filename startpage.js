@@ -65,7 +65,7 @@ srchBox.onblur=()=>{
 document.onkeydown=function(event){
     var e = event || window.event || arguments.callee.caller.arguments[0];
     if(e && e.keyCode==13 && searching){
-        if(!searchInPage) open(searchEngines[searchEngine]+srchBox.value);
+        if(searchInPage!="0") open(searchEngines[searchEngine]+srchBox.value);
         else window.location=(searchEngines[searchEngine]+srchBox.value);
         if(!clearInputAfterSearch) srchBox.value=""
     }else if(e.keyCode==191){
@@ -136,19 +136,19 @@ function saveSearchEngine(){
     setclearInputAfterS=document.getElementById("clearInput").selectedIndex
     setfocusInput=document.getElementById("focusInput").selectedIndex
     if(searchEngine!=setsearchEngine){
-        alert("已保存")
+        // alert("已保存")
         searchEngine=setsearchEngine
     }if(setsearchInPage!=searchInPage){
-        alert("已保存")
+        // alert("已保存")
         searchInPage=setsearchInPage
     }if(setclearInputAfterS!=clearInputAfterSearch){
-        alert("已保存")
+        // alert("已保存")
         clearInputAfterSearch=setclearInputAfterS
     }if(setclearInputAfterS!=clearInputAfterSearch){
-        alert("已保存")
+        // alert("已保存")
         clearInputAfterSearch=setclearInputAfterS
     }if(setfocusInput!=focusInput){
-        alert("已保存")
+        // alert("已保存")
         focusInput=setfocusInput
     }
     var oDate = new Date();

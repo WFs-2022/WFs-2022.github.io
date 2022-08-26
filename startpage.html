@@ -43,11 +43,27 @@
                 d="M320 320L192 192M192 320l128-128" />
         </svg>
         <h2>设置</h2>
-        <form action="">
+        <form>
             <label class="settingOptions" for="searchEngines">搜索引擎：</label>
             <select name="searchEngines" id="searchEngines">
                 <option value="0">百度</option>
-                <option value="1">搜狗</option>
+                <option value="1">必应</option>
+                <option value="2">搜狗</option>
+            </select><br>
+            <label class="settingOptions" for="openInNew">在新页面显示结果：</label>
+            <select name="openInNew?" id="openInNew">
+                <option value="0">是</option>
+                <option value="1">否</option>
+            </select><br>
+            <label class="settingOptions" for="clearInput">搜索后清除搜索框：</label>
+            <select name="clearInput?" id="clearInput">
+                <option value="0">是</option>
+                <option value="1">否</option>
+            </select><br>
+            <label class="settingOptions" for="focusInput">打开时聚焦输入框：</label>
+            <select name="focusInput?" id="focusInput">
+                <option value="0">是</option>
+                <option value="1">否</option>
             </select>
         </form>
         <br>

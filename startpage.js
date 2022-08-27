@@ -40,9 +40,10 @@ let srchBox = document.getElementById("srchBox")
 let setbtn  = document.getElementById("setting")
 let setpage = document.getElementById("settingpage")
 var searchEngines = new Array(
-    "https://www.baidu.com/s?wd=",    // 百度
-    "https://cn.bing.com/search?q=",  // 必应
-    "https://www.sogou.com/web?query="// 搜狗
+    "https://www.baidu.com/s?wd=",              // 百度
+    "https://cn.bing.com/search?q=",            // 必应
+    "https://search.bilibili.com/all?keyword=", // B站
+    "https://www.sogou.com/web?query="          // 搜狗
 )
 var searchEngine = 0
 var setpagerun = false, setpageon = false

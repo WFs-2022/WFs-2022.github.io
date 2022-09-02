@@ -33,7 +33,7 @@
 </head>
 <body>
     <div id="top">
-        <button id="back" title="返回" onclick="javascript:window.location='https://wfs-2022.github.io/index.html'">◀</button>
+        <button id="back" title="返回" onclick="javascript:history.go(-1)">◀</button>
         <div id="title"><h2>页面不存在</h2></div>
     </div>
     <div class="page">
@@ -50,7 +50,7 @@
             if(num<25) changetxt("唔……你踏入了未知~");
             else if(num<50) changetxt("这里是一片虚无！");
             else if(num<75) changetxt("这里什么也没有欸……");
-            else changetxt("前面的区域，以后再来探索吧！"); //不过，我不玩原神！！
+            else changetxt("前面的区域，以后再来探索吧！"); //但我并不玩原神！！
         }
     </script>
 </body>

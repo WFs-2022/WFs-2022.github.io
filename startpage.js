@@ -50,18 +50,19 @@ var setpagerun = false, setpageon = false
 var pageon = false
 var searching = false, searchInPage = false
 var clearInputAfterSearch = false, focusInput = true
+let background = document.getElementById("background");
 let setsearchEngine=document.getElementById("searchEngines").selectedIndex
 let setsearchInPage=document.getElementById("openInNew").selectedIndex
 let setclearInputAfterS=document.getElementById("clearInput").selectedIndex
 let setfocusInput=document.getElementById("focusInput").selectedIndex
 srchBox.onfocus=()=>{
     searching = true;
-    document.body.style.animationName="backblur"
+    background.style.animationName="backblur"
 }
 srchBox.onblur=()=>{
     srchBox.classList.add("srchBoxlosfoc")
     searching = false;
-    document.body.style.animationName="debackblur"
+    background.style.animationName="debackblur"
 }
 document.onkeydown=function(event){
     var e = event || window.event || arguments.callee.caller.arguments[0];

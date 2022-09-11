@@ -12,7 +12,7 @@ window.onload=()=>{
     }
     searchEngine=setsearchEngine
     searchInPage=setsearchInPage
-    clearInputAfterS=setclearInputAfterS
+    clearInputAfterSearch=setclearInputAfterS
     focusInput=setfocusInput
     document.getElementById("searchEngines").selectedIndex=setsearchEngine
     document.getElementById("openInNew").selectedIndex=setsearchInPage
@@ -28,12 +28,15 @@ function showTime(){
     var minut = day.getMinutes().toString();
     var secon = day.getSeconds().toString();
     var year = day.getFullYear();
-    var month = day.getMonth();
+    var month = day.getMonth()+1;
     var date = day.getDate();
     if(minut.length==1) minut="0"+minut;
     if(secon.length==1) secon="0"+secon;
     timeshow.innerText = hour+":"+minut+":"+secon;
     dateshow.innerText = year+"年"+month+"月"+date+"日";
+}
+window.onblur=()=>{
+    srchBox.blur();
 }
 
 let srchBox = document.getElementById("srchBox")

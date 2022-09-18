@@ -8,6 +8,10 @@ body {
     background-color: #F9FFFF;
     overflow: hidden;
 }
+.windowFILLINS iframe {
+    width: 100%;
+    height: 100%;
+}
 
 #bar {
     z-index: 100;
@@ -54,16 +58,30 @@ body {
     align-content: flex-start;
 }
 .desktopApps {
+    border-radius: 3px;
     margin-left: 8px;
+    width: 96px;
+    height: 96px;
+}
+.desktopApps:hover {
+    background-color: #dddd;
+}
+.desktopApps img, .desktopApps svg {
+    margin: 4px 0 0 16px;
     width: 64px;
     height: 64px;
-    background-color: red;
+}
+.desktopApps p {
+    width: 96px;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
 }
 
 .windows {
     z-index: 50;
     position: absolute;
-    width: 480px;   height: 180px;
+    width: 480px;   height: 400px;
     min-width: 72px;
     min-height: 32px;
     border-radius: 3px;
@@ -93,5 +111,5 @@ body {
     position: absolute;
     margin-top: 24px;
     width: 100%;   height: calc(100% - 24px);
-    background-color: #333333;
+    background-color: #FFF;
 }

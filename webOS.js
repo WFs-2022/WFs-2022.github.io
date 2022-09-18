@@ -2,11 +2,24 @@ window.onload=()=>{
     reloadListeners();
 }
 // 新建窗口
-var windowHTML = document.createElement("span")
-windowHTML.innerHTML='<span class="windowCLOSE">X</span><span class="windowMINIMIZE">一</span><span class="windowTOPS"></span><span class="windowFILLINS"></span>'
-windowHTML.className="windows"
-function newWindow() {
-    var newWindowHTML = windowHTML
+const windowHTML1='<span class="windowCLOSE">X</span><span class="windowMINIMIZE">一</span><span class="windowTOPS"></span><span class="windowFILLINS">'
+const windowHTML2='</span>'
+const windowFillinHTML=[
+    '',
+    '<iframe src="todoapp.html">',
+    '<iframe src="music-unlocker/index.html">',
+    '<iframe src="m3u8-downloader-master/index.html">',
+    '<iframe src="CST.html">',
+    '<iframe src="play.html">',
+    '<iframe src="Downloads.html">',
+    '<iframe src="超课表3.1.html">',
+    '<iframe src="startpage.html">',
+    '<iframe src="webOS.html">',
+]
+function newWindow(wintype) {
+    var newWindowHTML = document.createElement("span")
+    newWindowHTML.innerHTML=windowHTML1+windowFillinHTML[wintype]+windowHTML2
+    newWindowHTML.className="windows"
     document.body.appendChild(newWindowHTML)
     reloadListeners();
 }

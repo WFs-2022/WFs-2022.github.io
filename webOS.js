@@ -2,7 +2,7 @@ window.onload=()=>{
     reloadListeners();
 }
 // 新建窗口
-const windowHTML1='<span class="windowCLOSE">X</span><span class="windowMINIMIZE">一</span><span class="windowTOPS"></span><span class="windowFILLINS">'
+const windowHTML1='<span class="windowCLOSE"><svg viewBox="0 0 32 24"><line x1="10" x2="22" y1="6" y2="18" stroke-width="2" stroke="#121212" stroke-linecap="round" /><line x1="22" x2="10" y1="6" y2="18" stroke-width="2" stroke="#121212" stroke-linecap="round" /></svg></span><span class="windowMINIMIZE"><svg viewBox="0 0 32 24"><line x1="8" x2="24" y1="12" y2="12" stroke-width="2" stroke="#121212" stroke-linecap="round" /></svg></span><span class="windowTOPS"></span><span class="windowFILLINS">'
 const windowHTML2='</span>'
 const windowFillinHTML=[
     '',

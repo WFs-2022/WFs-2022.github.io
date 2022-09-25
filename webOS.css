@@ -81,25 +81,32 @@ body {
 .windows {
     z-index: 50;
     position: absolute;
+    left: 200px;    right: 200px;
     width: 480px;   height: 400px;
     min-width: 72px;
     min-height: 32px;
     border-radius: 3px;
     overflow: hidden;
-    background-color: #666666;
+    background-color: #CCC;
     resize: both;
 }
 .windowCLOSE{
     z-index: 50;
     float: right;
     width: 32px;    height: 24px;
-    background-color: red;
+    background-color: #CCC;
+}
+.windowCLOSE:hover{
+    background-color: #E81123;
 }
 .windowMINIMIZE{
     z-index: 50;
     float: right;
     width: 32px;    height: 24px;
-    background-color: blue;
+    background-color: #CCC;
+}
+.windowMINIMIZE:hover{
+    background-color: #DDD;
 }
 .windowTOPS {
     z-index: 50;

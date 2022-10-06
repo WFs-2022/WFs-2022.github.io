@@ -67,8 +67,8 @@ srchBox.onblur=()=>{
 document.onkeydown=function(event){
     var e = event || window.event || arguments.callee.caller.arguments[0];
     if(e && e.keyCode==13 && searching){
-        if(searchInPage=="0") open(searchEngines[searchEngine]+srchBox.value);
-        else window.location=(searchEngines[searchEngine]+srchBox.value);
+        if(searchInPage=="0") open(searchEngines[searchEngine]+encodeURI(srchBox.value));
+        else window.location=(searchEngines[searchEngine]+encodeURI(srchBox.value));
         if(clearInputAfterSearch=="0") srchBox.value=""
     }else if(e.keyCode==191){
         e.preventDefault();

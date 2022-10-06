@@ -42,6 +42,8 @@ window.onblur=()=>{
 let srchBox = document.getElementById("srchBox")
 let setbtn  = document.getElementById("setting")
 let setpage = document.getElementById("settingpage")
+let appsbtn = document.getElementById("apps")
+let appspage = document.getElementById("appspage")
 var searchEngines = new Array(
     "https://www.baidu.com/s?wd=",              // 百度
     "https://cn.bing.com/search?q=",            // 必应
@@ -50,6 +52,7 @@ var searchEngines = new Array(
 )
 var searchEngine = 0
 var setpagerun = false, setpageon = false
+var appspagerun = false, appspageon = false
 var pageon = false
 var searching = false, searchInPage = false
 var clearInputAfterSearch = false, focusInput = true
@@ -99,6 +102,20 @@ setbtn.onclick=()=>{
         setpage.style.animation="setpageact 1s forwards"
         setbtn.style.pointerEvents="none"
         setTimeout(() => {setbtn.style.pointerEvents="auto"}, 1000);
+    }
+}
+appsbtn.onclick=()=>{
+    if(appspageon){
+        appspageon = false
+        appspage.style.animation="appspagecls 1s forwards"
+        appsbtn.style.pointerEvents="none"
+        setTimeout(() => {appsbtn.style.pointerEvents="auto"}, 1000);
+    }else{
+        appspageon = true
+        appspage.focus()
+        appspage.style.animation="appspageact 1s forwards"
+        appsbtn.style.pointerEvents="none"
+        setTimeout(() => {appsbtn.style.pointerEvents="auto"}, 1000);
     }
 }
 setpage.onblur=()=>{

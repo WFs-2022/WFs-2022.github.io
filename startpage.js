@@ -73,18 +73,12 @@ document.onkeydown=function(event){
         if(searchInPage=="0") open(searchEngines[searchEngine]+encodeURI(srchBox.value));
         else window.location=(searchEngines[searchEngine]+encodeURI(srchBox.value));
         if(clearInputAfterSearch=="0") srchBox.value=""
-    }else if(e.keyCode==191){
-        e.preventDefault();
-        srchBox.focus();
-    }else if(e.keyCode==191){
-        e.preventDefault();
-        srchBox.focus();
     }else if(e.keyCode==27){
         srchBox.blur();
+    }else{
+        e.preventDefault();
+        srchBox.focus();
     }
-    // else{
-    //     alert(e.keyCode);
-    // }
 };
 document.oncontextmenu=function(event){
     var e = event || window.event;

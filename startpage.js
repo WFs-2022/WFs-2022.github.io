@@ -75,7 +75,7 @@ document.onkeydown=function(event){
         if(clearInputAfterSearch=="0") srchBox.value=""
     }else if(e.keyCode==27){
         srchBox.blur();
-    }else{
+    }else if(srchBox.focus()){
         e.preventDefault();
         srchBox.focus();
     }

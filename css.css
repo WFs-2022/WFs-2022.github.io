@@ -39,7 +39,7 @@ button:active {
     top: 60px;
     height: calc(100vh - 60px);
     scroll-snap-type: y mandatory;
-    overflow: hidden;
+    overflow: auto;
 }
 .screens {
     width: 100%;

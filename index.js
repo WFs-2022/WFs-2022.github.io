@@ -170,6 +170,7 @@ moon.onclick=()=>{
 }
 
 // index.html(remake) 特有
+// 鼠标滚轮重载：切页
 let screenBox = document.getElementById("screenContainer")
 let director = document.getElementById("director")
 screenBox.onmousewheel=function scroll(event){

@@ -60,6 +60,7 @@ let background = document.getElementById("background");
 let setsearchEngine, setsearchInPage, setclearInputAfterS, setfocusInput
 srchBox.onfocus=()=>{
     searching = true;
+    srchBox.before.content='123'
     background.style.animationName="backblur"
 }
 srchBox.onblur=()=>{

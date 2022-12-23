@@ -53,15 +53,6 @@
             var button=document.getElementById("btn");
 
             window.onload=function(){
-                var arr1 = document.cookie.split('; ');
-                for(var i = 0; i < arr1.length; i++){
-                    var arr2 = arr1[i].split('=');
-                    if(arr2[0] == 'bestspeed'){
-                        bestspeed=arr2[1];
-                    if(bestspeed>1) bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" times per second";
-                    else bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" time per second";
-                    }
-                }
             }
             function clicked() {
                 if(started){
@@ -95,7 +86,29 @@
                     started=false;
                 }, 15000);
             }
+            var mode;
+            window.onload=()=>{
+                var arr1 = document.cookie.split('; ');
+                for(var i = 0; i < arr1.length; i++){
+                    var arr2 = arr1[i].split('=');
+                    if(arr2[0] == 'mode') mode=arr2[1]; // 从cookie读取当前模式
+                    else if(arr2[0] == 'bestspeed'){
+                        bestspeed=arr2[1];
+                        if(bestspeed>1) bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" times per second";
+                        else bstshower.innerText="Best speed: "+parseFloat(bestspeed).toFixed(3)+" time per second";
+                    }
+                }
+                if(mode=="true"){
+                    document.querySelector('link[href="dark.css"]').disabled=true;
+                    document.querySelector('link[href="dark.css"]').disabled=false;
+                    document.querySelector('link[href="css.css"]').disabled=true;
+                }
+                // 自动修改模式
+            }
+            // 禁用右键菜单
+            window.oncontextmenu=function(event){
+                event.preventDefault();
+            }
         </script>
-        <script src="js.js"></script>
     </body>
 </html>

@@ -9,6 +9,7 @@
 }
 body {
     height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
 }
 ::-webkit-scrollbar {
     width: 6px;

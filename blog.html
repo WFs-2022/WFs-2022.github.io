@@ -78,7 +78,6 @@
             <button type="button" onclick="find()" style="border-radius: 3px;">跳转</button>
         </div>
     </div>
-    <div id="topmark"></div>
     <div id="blog">
         <!-- 
         <div class="blocks">
@@ -88,20 +87,30 @@
         </div> -->
         
         <div class="blocks">
+            <jmplnk id="2020-11-5"></jmplnk>
+            <h2>2022/11/5</h2>
+            <p>上周封控，要在家上网课，于是……线上期中(区统)考（<br>
+            这两天重写完了主页，换成了分页滑动贴合的。<br>
+            这个样式需要父容器有height属性与
+            <a title="MDN Reference" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-snap-type">
+                scroll-snap-type
+            </a>属性，并且overflow属性不能是hidden。</p>
+        </div>
+        <div class="blocks">
             <jmplnk id="2022-08-20"></jmplnk>
             <h2>2022/8/20</h2>
-            <p>网页的换肤效果终于写完了（</p><br>
-            <p>用的是&lt;link rel="stylesheet alternate" href="***.css" title="***"&gt;解决。其中：</p><br>
-            <p>&nbsp;rel只有stylesheet且无title的，必然加载并渲染；</p><br>
-            <p>&nbsp;rel只有stylesheet且title不为空的，默认加载并渲染；</p><br>
-            <p>&nbsp;rel有alternate、stylesheet且title不为空的，默认加载但不渲染；</p><br>
-            <p>可以用js的：
+            <p>网页的换肤效果终于写完了（<br>
+            用的是&lt;link rel="stylesheet alternate" href="***.css" title="***"&gt;解决。其中：<br>
+            &nbsp;rel只有stylesheet且无title的，必然加载并渲染；<br>
+            &nbsp;rel只有stylesheet且title不为空的，默认加载并渲染；<br>
+            &nbsp;rel有alternate、stylesheet且title不为空的，默认加载但不渲染；<br>
+            可以用下面的JS代码使不渲染的渲染：
                 <pre><window> 🔴 🟠 🟢 </window>
 document.querySelector('link[href="***.css"]').disabled=false;
-</pre>使不渲染的渲染</p><br>
-            <p>踩了个大坑：用js使不渲染的渲染，实际上<b>disabled属性需要先设为true，再设为false才能使其渲染！</b></p><br>
+</pre></pre><br>
+            踩了个大坑：用js使不渲染的渲染，实际上<b>disabled属性需要先设为true，再设为false才能使其渲染！</b><br>
             <br>
-            <p>还有一个新知识点：原生js实现块内页面横向滚动：</p>
+            还有一个新知识点：原生js实现块内页面横向滚动：</p>
             <pre><window> 🔴 🟠 🟢 </window>
 let codes = document.getElementsByTagName("pre");
 for (let i = 0; i &lt; codes.length; i++) {
@@ -313,7 +322,7 @@ function atk(depth){
     <script>
         let backtopbtn = document.getElementById("topbtn");
         backtopbtn.onclick=()=>{
-            window.location="#topmark";
+            window.location="#";
         }
         function find() {
             var inp = document.getElementById("jumper").value;
